@@ -305,5 +305,5 @@ NoConn ~ 5700 4300
 Wire Wire Line
 	4150 3750 4150 3950
 Text Notes 1600 5250 0    60   ~ 0
-Output voltage Table:\nVoltage | R1    | R2  | R3\n------------------\n10 V    | 3k    | 9k  | 20k\n15 V    | 7.89k | 20k | 17k
+Output voltage Table:\nVoltage   | R1    | R2  | R3\n------------------\n-10 V    | 3k    | 9k  | 20k\n-15 V    | 7.89k | 20k | 17k
 $EndSCHEMATC
