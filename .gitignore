@@ -14,3 +14,4 @@ Thumbs.db
 *.kicad_pcb-bak
 *.bak
 *.xml
+_autosave-*
