@@ -12,7 +12,7 @@ The root folder contains the KiCAD files and the bill of materials, while the ge
 Circuit description
 -------------------
 
-![LM399 reference board circuit](images/reference_board_circuit.svg)
+![LM399 reference board circuit](images/reference_board_circuit.png)
 
 This circuit utilizes the excellent LM399 voltage reference and outputs and amplified voltage of either -10 V or -15 V. There is no option to trim the output voltage as the absolute value is not that important, but stability is. The output voltage will be 10 V / 15 V __below__ the positive zener voltage.
 
