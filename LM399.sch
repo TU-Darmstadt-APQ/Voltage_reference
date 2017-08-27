@@ -36,12 +36,12 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 2
-Title ""
-Date ""
-Rev ""
+Title "LM399 negative voltage reference"
+Date "2017-08-28"
+Rev "v1.1"
 Comp ""
-Comment1 ""
-Comment2 ""
+Comment1 "Copyright (©) 2017, Patrick Baus <patrick.baus@physik.tu-darmstadt.de>"
+Comment2 "Licensed under CERN OHL v.1.2"
 Comment3 ""
 Comment4 ""
 $EndDescr
