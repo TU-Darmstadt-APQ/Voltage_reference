@@ -7,7 +7,7 @@
 "C1, ","1","10n","FCP1206H103J-H2","Capacitors_SMD:C_1206","Unpolarized capacitor","Cornell Dubilier"
 "C2, C3, ","2","100n","FCA0805C104M-J2","Capacitors_SMD:C_0805","Unpolarized capacitor","Cornell Dubilier"
 "J1, ","1","CONN_02X04","","Socket_Strips:Socket_Strip_Straight_2x04_Pitch2.54mm","Connector, double row, 02x04, pin header",""
-"R1, ","1","3K","Y006220K0000A0L","Custom_footprints:Vishay_S102","Resistor","Vishay"
+"R1, ","1","3K","Y00623K00000A0L","Custom_footprints:Vishay_S102","Resistor","Vishay"
 "R2, ","1","9K","Y00629K00000T9L","Custom_footprints:Vishay_S102","Resistor","Vishay"
 "R3, ","1","20K","Y006220K0000T9L","Custom_footprints:Vishay_S102","Resistor","Vishay"
 "U1, ","1","LM399","LM399A","Custom_footprints:LM399","Precision Reference, 6.95V","Linear Technology"
