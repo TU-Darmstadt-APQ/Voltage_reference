@@ -30,6 +30,7 @@ LIBS:contrib
 LIBS:valves
 LIBS:Linear Technology
 LIBS:ADI
+LIBS:net-tie
 LIBS:reference_board-cache
 EELAYER 26 0
 EELAYER END
@@ -37,8 +38,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 2
 Title "LM399 negative voltage reference"
-Date "2017-08-28"
-Rev "v1.1"
+Date "2017-09-28"
+Rev "v2.0.1"
 Comp ""
 Comment1 "Copyright (©) 2017, Patrick Baus <patrick.baus@physik.tu-darmstadt.de>"
 Comment2 "Licensed under CERN OHL v.1.2"
@@ -54,14 +55,14 @@ F 1 "LM399" H 4408 3247 60  0000 L CNN
 F 2 "Custom_footprints:LM399" H 4000 3250 60  0001 C CNN
 F 3 "" H 4000 3250 60  0001 C CNN
 F 4 "Linear Technology" H 4000 3300 60  0001 C CNN "MFN"
-F 5 "LM399A" H 4000 3300 60  0001 C CNN "MFP"
+F 5 "LM399AH" H 4000 3300 60  0001 C CNN "MFP"
 	1    4000 3300
 	1    0    0    -1  
 $EndComp
-Text HLabel 3850 2650 1    60   UnSpc ~ 0
-V+
+Text HLabel 3850 2400 1    60   UnSpc ~ 0
+V-heater+
 Text HLabel 3850 3950 3    60   UnSpc ~ 0
-V-
+V_heater-
 $Comp
 L LTC2057(MSOP-10) U2
 U 1 1 591A53A3
@@ -75,49 +76,20 @@ F 5 "LTC2057IMS" H 5700 4050 60  0001 C CNN "MFP"
 	1    5700 4050
 	1    0    0    -1  
 $EndComp
-Text HLabel 4150 2650 1    60   UnSpc ~ 0
-V_zener+
-$Comp
-L R R2
-U 1 1 591A53AB
-P 6450 5100
-F 0 "R2" H 6520 5146 50  0000 L CNN
-F 1 "9K" H 6520 5055 50  0000 L CNN
-F 2 "Custom_footprints:Vishay_S102" V 6380 5100 50  0001 C CNN
-F 3 "" H 6450 5100 50  0001 C CNN
-F 4 "Vishay" H 6450 5100 60  0001 C CNN "MFN"
-F 5 "Y00629K00000T9L" H 6450 5100 60  0001 C CNN "MFP"
-	1    6450 5100
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R3
-U 1 1 591A53B4
-P 6450 5500
-F 0 "R3" H 6520 5546 50  0000 L CNN
-F 1 "20K" H 6520 5455 50  0000 L CNN
-F 2 "Custom_footprints:Vishay_S102" V 6380 5500 50  0001 C CNN
-F 3 "" H 6450 5500 50  0001 C CNN
-F 4 "Vishay" H 6450 5500 60  0001 C CNN "MFN"
-F 5 "Y006220K0000T9L" H 6450 5500 60  0001 C CNN "MFP"
-	1    6450 5500
-	1    0    0    -1  
-$EndComp
-Text HLabel 6450 5800 3    60   UnSpc ~ 0
-V_zener+
-Text Notes 6900 5750 0    60   ~ 0
-Use precision resistors\nwith an extremly low TCR\nor a network with very good\nTracking TCR.
+Text HLabel 2500 2500 1    60   UnSpc ~ 0
+V_zener+_force
+Text Notes 7800 5750 0    60   ~ 0
+Use precision resistors\nwith an extremly low TCR\nor a network with very good\ntracking TCR.
 $Comp
 L R R1
 U 1 1 591A53BD
 P 5700 2800
 F 0 "R1" V 5493 2800 50  0000 C CNN
-F 1 "3K" V 5584 2800 50  0000 C CNN
-F 2 "Custom_footprints:Vishay_S102" V 5630 2800 50  0001 C CNN
+F 1 "7.5K" V 5584 2800 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805" V 5630 2800 50  0001 C CNN
 F 3 "" H 5700 2800 50  0001 C CNN
-F 4 "Vishay" H 5700 2800 60  0001 C CNN "MFN"
-F 5 "Y00623K00000B9L" H 5700 2800 60  0001 C CNN "MFP"
-F 6 "TCR <= 5ppm, absolute precision unimportant" V 5700 2800 60  0001 C CNN "Note"
+F 4 "Welwyn" H 5700 2800 60  0001 C CNN "MFN"
+F 5 "PCF0805-13-7K5-B-T1" H 5700 2800 60  0001 C CNN "MFP"
 	1    5700 2800
 	0    1    1    0   
 $EndComp
@@ -131,102 +103,29 @@ Text HLabel 5600 3100 1    60   UnSpc ~ 0
 V+
 Text HLabel 5600 5050 3    60   UnSpc ~ 0
 V-
-Text HLabel 7150 4050 2    60   Output ~ 0
+Text HLabel 7350 4050 2    60   Output ~ 0
 V_zener-
 $Comp
 L C C1
 U 1 1 591A53CC
-P 6800 5050
-F 0 "C1" H 6915 5096 50  0000 L CNN
-F 1 "10n" H 6915 5005 50  0000 L CNN
-F 2 "Capacitors_SMD:C_1206" H 6838 4900 50  0001 C CNN
-F 3 "" H 6800 5050 50  0001 C CNN
-F 4 "Cornell Dubilier" H 6800 5050 60  0001 C CNN "MFN"
-F 5 "FCP1206H103J-H2" H 6800 5050 60  0001 C CNN "MFP"
-	1    6800 5050
+P 6350 5050
+F 0 "C1" H 6465 5096 50  0000 L CNN
+F 1 "10n" H 6465 5005 50  0000 L CNN
+F 2 "Capacitors_SMD:C_1206" H 6388 4900 50  0001 C CNN
+F 3 "" H 6350 5050 50  0001 C CNN
+F 4 "Kemet" H 6350 5050 60  0001 C CNN "MFN"
+F 5 "C1206C103JAGACTU" H 6350 5050 60  0001 C CNN "MFP"
+F 6 "Use *that* one!" H 6350 5050 60  0001 C CNN "Note"
+F 7 "C1206C223J2GACAUTO" H 6350 5050 60  0001 C CNN "Alternative"
+	1    6350 5050
 	1    0    0    -1  
 $EndComp
 Text Notes 1850 4000 0    60   ~ 0
 TODO:\n- use 4 drill holes to mount styrofoam
-Wire Wire Line
-	3850 2850 3850 2650
-Wire Wire Line
-	3850 3950 3850 3750
-Wire Wire Line
-	4150 2650 4150 2850
-Wire Wire Line
-	6450 5800 6450 5650
-Wire Wire Line
-	6450 5250 6450 5350
-Wire Wire Line
-	6450 2800 6450 4950
-Wire Wire Line
-	6000 4050 7150 4050
-Wire Wire Line
-	5250 5300 6800 5300
-Wire Wire Line
-	5250 3650 5250 5300
-Wire Wire Line
-	5250 4150 5400 4150
-Connection ~ 6450 5300
-Wire Wire Line
-	4150 3950 5400 3950
-Wire Wire Line
-	5550 2800 4850 2800
-Wire Wire Line
-	4850 2800 4850 3950
-Connection ~ 4850 3950
-Wire Wire Line
-	5850 2800 6450 2800
-Connection ~ 6450 4050
-Wire Wire Line
-	5600 4350 5600 5050
-Wire Wire Line
-	5600 3100 5600 3750
-Wire Wire Line
-	6450 4800 6800 4800
-Wire Wire Line
-	6800 4800 6800 4900
-Connection ~ 6450 4800
-Wire Wire Line
-	6800 5300 6800 5200
-Text Notes 7200 4950 0    60   ~ 0
-Use a Film capacitor with a high insulation\nresistance (no polyester), which is stable\nover temperature (PP, PPS)
-Wire Notes Line
-	4100 3750 4200 3750
-Wire Notes Line
-	4200 3750 4200 3900
-Wire Notes Line
-	5400 3900 5400 4000
-Wire Notes Line
-	5400 4000 4100 4000
-Wire Notes Line
-	4100 4000 4100 3750
-Wire Notes Line
-	5400 3900 4900 3900
-Wire Notes Line
-	4900 3900 4900 2850
-Wire Notes Line
-	4900 2850 5550 2850
-Wire Notes Line
-	5550 2850 5550 2750
-Wire Notes Line
-	5550 2750 4800 2750
-Wire Notes Line
-	4800 2750 4800 3900
-Wire Notes Line
-	4800 3900 4200 3900
-Wire Notes Line
-	5050 4000 5050 4150
-Wire Notes Line
-	5050 4150 5250 4150
+Text Notes 6950 4700 0    60   ~ 0
+Use a Film capacitor with a high insulation\nresistance (no polyester), which is stable\nover temperature. Nowadays C0G (BME) is\neven better than film.
 Text Notes 4500 4100 0    60   ~ 0
 Guard ring
-Wire Wire Line
-	5800 3850 5800 3650
-Wire Wire Line
-	5800 3650 5250 3650
-Connection ~ 5250 4150
 $Comp
 L C C2
 U 1 1 591A5401
@@ -240,11 +139,6 @@ F 5 "FCA0805C104M-J2" H 6000 3450 60  0001 C CNN "MFP"
 	1    6000 3450
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5600 3200 6000 3200
-Wire Wire Line
-	6000 3200 6000 3300
-Connection ~ 5600 3200
 $Comp
 L GND #PWR05
 U 1 1 591A540B
@@ -256,15 +150,6 @@ F 3 "" H 6000 3700 50  0001 C CNN
 	1    6000 3700
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6000 3600 6000 3700
-Wire Wire Line
-	6000 4500 6000 4600
-Wire Wire Line
-	6000 4900 6000 5000
-Wire Wire Line
-	6000 4500 5600 4500
-Connection ~ 5600 4500
 $Comp
 L GND #PWR06
 U 1 1 591A5416
@@ -289,21 +174,214 @@ F 5 "FCA0805C104M-J2" H 6000 4750 60  0001 C CNN "MFP"
 	1    6000 4750
 	1    0    0    -1  
 $EndComp
-Text Notes 6800 3350 0    60   ~ 0
-e.g. PCF0805-13-7K5-B-T1 (5 ppm),\nTE Connectivity RU73X2A7K5LTDF (2 ppm),\nVishay S102 (2 ppm),\nor Vishay VSMP (0.05 ppm)\n\nPCF0805-13-3K-B-T1. (5 ppm),\nVishay S102 (2 ppm),\nor Vishay VSMP (0.05 ppm)
-Text Notes 7300 5150 0    60   ~ 0
+Text Notes 6900 3400 0    60   ~ 0
+e.g. PCF0805-13-7K5-B-T1 (5 ppm),\nTE Connectivity RU73X2A7K5LTDF (2 ppm),\nVishay S102 (2 ppm)\n\nPCF0805-13-3K-B-T1. (5 ppm),\nVishay S102 (2 ppm)
+Text Notes 6950 4850 0    60   ~ 0
 DON'T use AVX! They will melt at the spec'ed temperature
-Text Notes 4200 6050 0    60   ~ 0
+Text Notes 4100 6300 0    60   ~ 0
 Kelvin connect this to the V_zener+ input pin
-Text Notes 3150 1400 0    60   ~ 0
+Text Notes 3150 1200 0    60   ~ 0
 Use 1 oz./sqft of copper to\nminimize trace resistance and\ntherefore minimize succeptibility\nto temperature.
-Text Notes 3200 2000 0    60   ~ 0
+Text Notes 3200 1650 0    60   ~ 0
 Trace resistance of 0.32 Ohm\n(100mm, 4000 ppm / K) causes\na 1.5 µV / K error.
 NoConn ~ 5700 3800
 NoConn ~ 5800 4250
 NoConn ~ 5700 4300
+Text HLabel 2800 2500 1    60   Output ~ 0
+V_zener+_sense
+$Comp
+L NET-TIE W1
+U 1 1 5976DF85
+P 2800 2650
+F 0 "W1" V 2754 2738 50  0000 L CNN
+F 1 "NET-TIE" V 2845 2738 50  0000 L CNN
+F 2 "Custom_footprints:NET-TIE-0.15mm" H 2800 2550 50  0001 C CNN
+F 3 "" H 2800 2650 60  0000 C CNN
+	1    2800 2650
+	0    1    1    0   
+$EndComp
+$Comp
+L NET-TIE W3
+U 1 1 5976E542
+P 6700 5900
+F 0 "W3" V 6654 5988 50  0000 L CNN
+F 1 "NET-TIE" V 6745 5988 50  0000 L CNN
+F 2 "Custom_footprints:NET-TIE-0.15mm" H 6700 5800 50  0001 C CNN
+F 3 "" H 6700 5900 60  0000 C CNN
+	1    6700 5900
+	0    1    1    0   
+$EndComp
+Text Label 2500 2950 3    60   ~ 0
+V_zener+
+Text Label 6700 6100 3    60   ~ 0
+V_zener+
+Text Label 4150 2750 1    60   ~ 0
+V_zener+
+$Comp
+L NET-TIE W2
+U 1 1 5976EB13
+P 4850 3500
+F 0 "W2" V 4804 3588 50  0000 L CNN
+F 1 "NET-TIE" V 4895 3588 50  0000 L CNN
+F 2 "Custom_footprints:NET-TIE-0.20mm" H 4850 3400 50  0001 C CNN
+F 3 "" H 4850 3500 60  0000 C CNN
+	1    4850 3500
+	0    1    1    0   
+$EndComp
+Text Notes 1850 4800 0    60   ~ 0
+Kelvin connect the Zener. Even the the small current\npassing through R1 (1 mA) will introduce an error of 0.2 ppm/K\n(10 mm trace 0=> 0.2 ohm, 1 mA, 0.7 % tcr, ~~7 V reference)
+Text Notes 1950 5600 0    60   ~ 0
+Output voltage Table:\nVoltage   | R1    | R2  | R3\n------------------\n-10 V    | 3k    | 9k  | 20k\n-15 V    | 7.89k | 20k | 17k
+$Comp
+L R R2
+U 1 1 59A2CAC2
+P 6700 5150
+F 0 "R2" H 6770 5196 50  0000 L CNN
+F 1 "20k" H 6770 5105 50  0000 L CNN
+F 2 "Custom_footprints:Vishay_S102K" V 6630 5150 50  0001 C CNN
+F 3 "" H 6700 5150 50  0001 C CNN
+F 4 "Vishay" H 6700 5150 60  0001 C CNN "MFN"
+F 5 "Y006220K0000T9L" H 6700 5150 60  0001 C CNN "MFP"
+	1    6700 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R3
+U 1 1 59A2CBAE
+P 6700 5550
+F 0 "R3" H 6770 5596 50  0000 L CNN
+F 1 "34k" H 6770 5505 50  0000 L CNN
+F 2 "Custom_footprints:Vishay_S102K" V 6630 5550 50  0001 C CNN
+F 3 "" H 6700 5550 50  0001 C CNN
+F 4 "Vishay" H 6700 5550 60  0001 C CNN "MFN"
+F 5 "Y006234K0000T9L" H 6700 5550 60  0001 C CNN "MFP"
+	1    6700 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R4
+U 1 1 59A2D000
+P 7000 5550
+F 0 "R4" H 7070 5596 50  0000 L CNN
+F 1 "34k" H 7070 5505 50  0000 L CNN
+F 2 "Custom_footprints:Vishay_S102K" V 6930 5550 50  0001 C CNN
+F 3 "" H 7000 5550 50  0001 C CNN
+F 4 "Vishay" H 7000 5550 60  0001 C CNN "MFN"
+F 5 "Y006234K0000T9L" H 7000 5550 60  0001 C CNN "MFP"
+	1    7000 5550
+	1    0    0    -1  
+$EndComp
+Text Notes 8150 3800 0    60   ~ 0
+Information on insulation resistance can be found here:\nhttp://www.iequalscdvdt.com/Insulation_resis_.html\nhttps://www.vishay.com/docs/26033/gentechinfofilm.pdf
+Wire Wire Line
+	3850 2850 3850 2400
+Wire Wire Line
+	3850 3950 3850 3750
+Wire Wire Line
+	2500 2500 2500 2950
+Wire Wire Line
+	6700 5800 6700 5700
+Wire Wire Line
+	6700 2800 6700 5000
+Wire Wire Line
+	6000 4050 7350 4050
+Wire Wire Line
+	5250 4150 5400 4150
+Wire Wire Line
+	4150 3950 5400 3950
+Wire Wire Line
+	5550 2800 4850 2800
+Wire Wire Line
+	5850 2800 6700 2800
+Connection ~ 6700 4050
+Wire Wire Line
+	5600 4350 5600 5050
+Wire Wire Line
+	5600 3100 5600 3750
+Connection ~ 6700 4800
+Wire Notes Line
+	4100 3750 4200 3750
+Wire Notes Line
+	4200 3750 4200 3850
+Wire Notes Line
+	5400 3900 5400 4000
+Wire Notes Line
+	5400 4000 4100 4000
+Wire Notes Line
+	4100 4000 4100 3750
+Wire Notes Line
+	5400 3900 4900 3900
+Wire Notes Line
+	4900 3900 4900 2850
+Wire Notes Line
+	4900 2850 5550 2850
+Wire Notes Line
+	5550 2850 5550 2750
+Wire Notes Line
+	5550 2750 4800 2750
+Wire Notes Line
+	4800 2750 4800 3850
+Wire Notes Line
+	4800 3850 4200 3850
+Wire Notes Line
+	5050 4000 5050 4150
+Wire Notes Line
+	5050 4150 5250 4150
+Wire Wire Line
+	5800 3850 5800 3650
+Wire Wire Line
+	5800 3650 5250 3650
+Connection ~ 5250 4150
+Wire Wire Line
+	5600 3200 6000 3200
+Wire Wire Line
+	6000 3200 6000 3300
+Connection ~ 5600 3200
+Wire Wire Line
+	6000 3600 6000 3700
+Wire Wire Line
+	6000 4500 6000 4600
+Wire Wire Line
+	6000 4900 6000 5000
+Wire Wire Line
+	6000 4500 5600 4500
+Connection ~ 5600 4500
 Wire Wire Line
 	4150 3750 4150 3950
-Text Notes 1600 5250 0    60   ~ 0
-Output voltage Table:\nVoltage   | R1    | R2  | R3\n------------------\n-10 V    | 3k    | 9k  | 20k\n-15 V    | 7.89k | 20k | 17k
+Wire Wire Line
+	2500 2950 2800 2750
+Wire Wire Line
+	2800 2550 2800 2500
+Wire Wire Line
+	6700 6000 6700 6100
+Wire Wire Line
+	4150 2750 4150 2850
+Wire Wire Line
+	4850 2800 4850 3400
+Wire Wire Line
+	4850 3600 4850 3900
+Wire Wire Line
+	4850 3900 4150 3900
+Connection ~ 4150 3900
+Wire Wire Line
+	6700 4800 6350 4800
+Wire Wire Line
+	6350 4800 6350 4900
+Wire Wire Line
+	5250 5350 7000 5350
+Wire Wire Line
+	6350 5350 6350 5200
+Connection ~ 6350 5350
+Wire Wire Line
+	5250 3650 5250 5350
+Wire Wire Line
+	6700 5300 6700 5400
+Connection ~ 6700 5350
+Wire Wire Line
+	7000 5350 7000 5400
+Wire Wire Line
+	7000 5700 7000 5750
+Wire Wire Line
+	7000 5750 6700 5750
+Connection ~ 6700 5750
 $EndSCHEMATC

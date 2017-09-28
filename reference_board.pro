@@ -1,4 +1,4 @@
-update=2017-03-29T15:30:57 CEST
+update=2017-08-27T01:48:21 CEST
 version=1
 last_client=kicad
 [pcbnew]
@@ -60,3 +60,4 @@ LibName28=contrib
 LibName29=valves
 LibName30=libraries/Linear Technology
 LibName31=libraries/ADI
+LibName32=libraries/net-tie

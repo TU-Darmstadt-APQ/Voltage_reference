@@ -1,15 +1,13 @@
-"Source:","/home/maat/Documents/Uni/Physik/Phd/DgDrive/KiCAD/reference_board_v1.0/reference_board.sch"
-"Date:","2017-08-18T11:44:25 CEST"
-"Tool:","Eeschema (2017-06-16 revision 2018d4894)-master"
-"Generator:","/home/maat/Documents/Uni/Physik/Phd/DgLock/circuits/KiCAD/scripts/bom_csv_grouped_by_value_with_fp.py"
-"Component Count:","10"
-"Ref","Qnty","Value","Cmp name","Footprint","Description","Vendor"
-"C1, ","1","10n","FCP1206H103J-H2","Capacitors_SMD:C_1206","Unpolarized capacitor","Cornell Dubilier"
-"C2, C3, ","2","100n","FCA0805C104M-J2","Capacitors_SMD:C_0805","Unpolarized capacitor","Cornell Dubilier"
-"J1, ","1","CONN_02X04","","Socket_Strips:Socket_Strip_Straight_2x04_Pitch2.54mm","Connector, double row, 02x04, pin header",""
-"R1, ","1","3K","Y006220K0000A0L","Custom_footprints:Vishay_S102","Resistor","Vishay"
-"R2, ","1","9K","Y00629K00000T9L","Custom_footprints:Vishay_S102","Resistor","Vishay"
-"R3, ","1","20K","Y006220K0000T9L","Custom_footprints:Vishay_S102","Resistor","Vishay"
-"U1, ","1","LM399","LM399A","Custom_footprints:LM399","Precision Reference, 6.95V","Linear Technology"
-"U2, ","1","LTC2057","LTC2057IMS","Housings_SSOP:MSOP-10_3x3mm_Pitch0.5mm","215MHz, Rail-to-Rail Output, 1.1nV/√Hz, 3.5mA Op Amp","Linear Technology"
-"U3, ","1","AD590","AD590","Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm","2-Terminal IC Temperature Transducer","Analog Devices"
+Component Count:,14,,,,,
+Ref,Qnty,Value,Cmp name,Footprint,Description,Vendor
+"C1, ",1,10n,C1206C103JAGACTU,Capacitors_SMD:C_1206,Unpolarized capacitor,Kemet
+"C2, C3, ",2,100n,FCA0805C104M-J2,Capacitors_SMD:C_0805,Unpolarized capacitor,Cornell Dubilier
+"J1, ",1,CONN_02X04,,Socket_Strips:Socket_Strip_Straight_2x04_Pitch2.54mm,,
+"R1, ",1,7.5K,PCF0805-13-7K5-B-T1,Resistors_SMD:R_0805,Resistor,Welwyn
+"R2, ",1,20k,Y006220K0000T9L,Custom_footprints:Vishay_S102K,Resistor,Vishay
+"R3, R4, ",2,34k,Y006234K0000T9L,Custom_footprints:Vishay_S102K,Resistor,Vishay
+"U1, ",1,LM399,LM399AH,Custom_footprints:LM399,"Precision Reference, 6.95V",Linear Technology
+"U2, ",1,LTC2057,LTC2057IMS,Housings_SSOP:MSOP-10_3x3mm_Pitch0.5mm,"215MHz, Rail-to-Rail Output, 1.1nV/√Hz, 3.5mA Op Amp",Linear Technology
+"U3, ",1,AD590,AD590,Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm,2-Terminal IC Temperature Transducer,Analog Devices
+"W1, W3, ",2,NET-TIE,,Custom_footprints:NET-TIE-0.15mm,,
+"W2, ",1,NET-TIE,,Custom_footprints:NET-TIE-0.20mm,,
