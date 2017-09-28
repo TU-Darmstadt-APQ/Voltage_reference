@@ -16,7 +16,16 @@ Circuit description
 
 This circuit utilizes the excellent LM399 voltage reference and outputs and amplified voltage of either -10 V or -15 V. There is no option to trim the output voltage as the absolute value is not that important, but stability is. The output voltage will be 10 V / 15 V __below__ the positive zener voltage.
 
-The design is a self-biased circuit, that means the zener diode bias current is produced by the zener voltage and therefore as stable as the reference (neglecting the influence of the bias current on the zener voltage, which is negligable). In order to keep the zener current as low possible a zener current of a little more than 1 mA, depeding on the output voltage, was chosen.
+The design is a self-biased circuit, that means the zener diode bias current is produced by the zener voltage and therefore as stable as the reference (neglecting the influence of the bias current on the zener voltage, which is negligable). In order to keep the zener current as low possible, a zener current of a little more than 1 mA was chosen.
+
+Reference table for choosing the resistor values:
+
+|Voltage | R1    | R2  | R3  |
+|--------|-------|-----|-----|
+|-10 V   | 3k    | 9k  | 20k |
+|-15 V   | 7.89k | 20k | 17k |
+
+Different values are possible as well, but these values were readily available on Ebay/Farnell/Mouser.
 
 Single supply operation is possible as long the output voltage is larger than 0.1 V.
 
