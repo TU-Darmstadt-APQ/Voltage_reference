@@ -25,7 +25,7 @@ Reference table for choosing the resistor values:
 |-10 V   | 3k    | 9k  | 20k |
 |-15 V   | 7.89k | 20k | 17k |
 
-Different values are possible as well, but these values were readily available on Ebay/Farnell/Mouser.
+Different values are possible as well, but these values were readily available on Ebay/Farnell/Mouser. When choosing a value for R1, choose a value as close as possible but always __less than or equal__ to the value given. This ensures, that the zener current is at least 1 mA.
 
 Single supply operation is possible as long the output voltage is larger than 0.1 V.
 
