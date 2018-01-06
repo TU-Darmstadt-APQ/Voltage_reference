@@ -47,10 +47,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L LM399 U1
+L LM399 U2
 U 1 1 591A5398
 P 4000 3300
-F 0 "U1" H 4408 3353 60  0000 L CNN
+F 0 "U2" H 4408 3353 60  0000 L CNN
 F 1 "LM399" H 4408 3247 60  0000 L CNN
 F 2 "Custom_footprints:LM399" H 4000 3250 60  0001 C CNN
 F 3 "" H 4000 3250 60  0001 C CNN
@@ -93,10 +93,10 @@ V-
 Text HLabel 7550 4050 2    60   Output ~ 0
 V_zener-
 $Comp
-L C C1
+L C C3
 U 1 1 591A53CC
 P 6550 5050
-F 0 "C1" H 6665 5096 50  0000 L CNN
+F 0 "C3" H 6665 5096 50  0000 L CNN
 F 1 "100n" H 6665 5005 50  0000 L CNN
 F 2 "Capacitors_SMD:C_1206" H 6588 4900 50  0001 C CNN
 F 3 "" H 6550 5050 50  0001 C CNN
@@ -110,10 +110,10 @@ TODO:\n- use 4 drill holes to mount styrofoam
 Text Notes 7150 4700 0    60   ~ 0
 Use a Film capacitor with a high insulation\nresistance (no polyester), which is stable\nover temperature. Nowadays C0G (BME) is\neven better than film.
 $Comp
-L C C2
+L C C1
 U 1 1 591A5401
 P 6200 3450
-F 0 "C2" H 6315 3496 50  0000 L CNN
+F 0 "C1" H 6315 3496 50  0000 L CNN
 F 1 "100n" H 6315 3405 50  0000 L CNN
 F 2 "Capacitors_SMD:C_1206" H 6238 3300 50  0001 C CNN
 F 3 "" H 6200 3450 50  0001 C CNN
@@ -123,10 +123,10 @@ F 5 "GRM31C5C1H104JA01L" H 6200 3450 60  0001 C CNN "MFP"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR05
+L GND #PWR2
 U 1 1 591A540B
 P 6200 3700
-F 0 "#PWR05" H 6200 3450 50  0001 C CNN
+F 0 "#PWR2" H 6200 3450 50  0001 C CNN
 F 1 "GND" H 6205 3527 50  0000 C CNN
 F 2 "" H 6200 3700 50  0001 C CNN
 F 3 "" H 6200 3700 50  0001 C CNN
@@ -134,10 +134,10 @@ F 3 "" H 6200 3700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR06
+L GND #PWR3
 U 1 1 591A5416
 P 6200 5000
-F 0 "#PWR06" H 6200 4750 50  0001 C CNN
+F 0 "#PWR3" H 6200 4750 50  0001 C CNN
 F 1 "GND" H 6205 4827 50  0000 C CNN
 F 2 "" H 6200 5000 50  0001 C CNN
 F 3 "" H 6200 5000 50  0001 C CNN
@@ -145,10 +145,10 @@ F 3 "" H 6200 5000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C3
+L C C2
 U 1 1 591A541E
 P 6200 4750
-F 0 "C3" H 6315 4796 50  0000 L CNN
+F 0 "C2" H 6315 4796 50  0000 L CNN
 F 1 "100n" H 6315 4705 50  0000 L CNN
 F 2 "Capacitors_SMD:C_1206" H 6238 4600 50  0001 C CNN
 F 3 "" H 6200 4750 50  0001 C CNN
@@ -217,10 +217,10 @@ Output voltage Table:\nVoltage   | R1    | R2  | R3\n------------------\n-10 V  
 Text Notes 8350 3800 0    60   ~ 0
 Information on insulation resistance can be found here:\nhttp://www.iequalscdvdt.com/Insulation_resis_.html\nhttps://www.vishay.com/docs/26033/gentechinfofilm.pdf
 $Comp
-L R R5
+L R R2
 U 1 1 59E8CFD2
 P 4850 2800
-F 0 "R5" V 4643 2800 50  0000 C CNN
+F 0 "R2" V 4643 2800 50  0000 C CNN
 F 1 "200k" V 4734 2800 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" V 4780 2800 50  0001 C CNN
 F 3 "" H 4850 2800 50  0001 C CNN
@@ -318,10 +318,10 @@ Wire Wire Line
 Wire Wire Line
 	6900 5800 6900 5600
 $Comp
-L LTC2057(DFN) U2
+L LTC2057(DFN) U3
 U 1 1 5A502B7D
 P 5900 4050
-F 0 "U2" H 6241 4096 50  0000 L CNN
+F 0 "U3" H 6241 4096 50  0000 L CNN
 F 1 "LTC2057" H 6241 4005 50  0000 L CNN
 F 2 "Housings_DFN_QFN:DFN-8-1EP_3x3mm_Pitch0.5mm" H 6241 3959 50  0001 L CNN
 F 3 "" H 5950 4250 50  0000 C CNN
