@@ -7,7 +7,7 @@ encoding utf-8
 Sheet 2 2
 Title "LM399 negative voltage reference"
 Date "2018-08-17"
-Rev "v2.2.0"
+Rev "v3.0.0"
 Comp ""
 Comment1 "Copyright (©) 2018, Patrick Baus <patrick.baus@physik.tu-darmstadt.de>"
 Comment2 "Licensed under CERN OHL v.1.2"
