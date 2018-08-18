@@ -20,10 +20,10 @@ The design is a self-biased circuit, that means the zener diode bias current is 
 
 Reference table for choosing the resistor values:
 
-|Voltage | R1    | R2  | R3  |
-|--------|-------|-----|-----|
-|-10 V   | 3k    | 9k  | 20k |
-|-15 V   | 7.89k | 20k | 17k |
+|Voltage | R1    |    RN1    |
+|--------|-------|-----------|
+|-10 V   | 3k    | 10k /  9k |
+|-15 V   | 7.89k | 17k / 20k |
 
 Different values are possible as well, but these values were readily available on Ebay/Farnell/Mouser. When choosing a value for R1, choose a value as close as possible but always __less than or equal__ to the value given. This ensures, that the zener current is at least 1 mA.
 
