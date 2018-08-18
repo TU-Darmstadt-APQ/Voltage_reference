@@ -129,7 +129,7 @@ F0 "U" -360 340 60 H V C CNN
 F1 "Linear-Technology:LM399" 340 -320 60 H V C CNN
 F2 "Custom_footprints:LM399" 750 -400 60 H I C CNN
 F3 "" 0 -50 60 H I C CNN
-F4 "Linear Technology" -260 440 60 H I C CNN "MFN"
+F4 "Analog Devices" -260 440 60 H I C CNN "MFN"
 $FPLIST
  TO-46
  LM399
@@ -163,7 +163,7 @@ F0 "U" 150 200 50 H V L CNN
 F1 "Linear-Technology:LTC2057(DFN)" 150 -200 50 H V L CNN
 F2 "Housings_DFN_QFN:DFN-8-1EP_3x3mm_Pitch0.5mm" -50 100 50 H I C CNN
 F3 "" 50 200 50 H V C CNN
-F4 "Linear Technology" 600 300 60 H I C CNN "MFN"
+F4 "Analog Devices" 600 300 60 H I C CNN "MFN"
 F5 "LTC2057" 400 400 60 H I C CNN "MFP"
 $FPLIST
  SOIC*

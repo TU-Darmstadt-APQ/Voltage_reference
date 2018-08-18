@@ -3,7 +3,7 @@ Quantity Per PCB,References,Value,MFN,MFP,Description,Footprint
 1,J1,CONN_02X04,,,"Generic connector, double row, 02x04, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)",PinSocket_2x04_P2.54mm_Vertical
 1,R2,200k,Susumu,RR0816P-204-D,Resistor,R_0603_1608Metric
 1,R1,7.5K,Welwyn,PCF0805-13-7K5-B-T1,Resistor,R_0603_1608Metric
-1,RN1,17k/20k,Vishay,300144ZT,voltage divider in a single package,Vishay_300144
+1,RN1,17k/20k,Vishay,300144Z,voltage divider in a single package,Vishay_300144
 1,U2,LM399,Linear Technology,LM399AH,"Precision Reference, 6.95V",LM399
 1,U3,LTC2057,Linear Technology,LTC2057IDD,"High Voltage, Low Noise Zero-Drift Operational Amplifier",DFN-8-1EP_3x3mm_P0.5mm_EP1.66x2.38mm
 1,U1,TMP236,Texas Instruments,TMP236A2DCKT,"Analog thermistor temperature sensor, Â±2.5C accuracy, -55C to +130C, SC-70-5",SOT-353_SC-70-5
@@ -19,5 +19,5 @@ Number of PCBs:,1
 Total components:,10
 Schematic Version:,v2.2.0
 Schematic Date:,2018-08-17
-BoM Date:,2018-08-18T01:21:51 CEST
+BoM Date:,2018-08-18T02:05:00 CEST
 KiCad Version:,Eeschema (6.0.0-rc1-dev)
