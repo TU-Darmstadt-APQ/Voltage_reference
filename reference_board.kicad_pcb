@@ -829,7 +829,7 @@
     (tags "DFN 0.5")
     (path /591A50E3/5A502B7D)
     (attr smd)
-    (fp_text reference U3 (at 0 -2.55) (layer F.SilkS)
+    (fp_text reference U3 (at 1.2 -2.7) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value LTC2057 (at 0 2.55) (layer F.Fab)
@@ -1144,7 +1144,7 @@
   (segment (start 174.36 102.1) (end 174.36 103.14) (width 0.15) (layer B.Cu) (net 14))
   (segment (start 174.36 103.14) (end 171.3 106.2) (width 0.15) (layer B.Cu) (net 14))
 
-  (zone (net 1) (net_name GND) (layer B.Cu) (tstamp 0) (hatch edge 0.508)
+  (zone (net 1) (net_name GND) (layer B.Cu) (tstamp 5B7916F9) (hatch edge 0.508)
     (connect_pads (clearance 0.15))
     (min_thickness 0.15)
     (fill yes (arc_segments 16) (thermal_gap 0.15) (thermal_bridge_width 0.508) (smoothing chamfer) (radius 0.2))
