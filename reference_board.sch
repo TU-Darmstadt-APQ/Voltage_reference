@@ -6,7 +6,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 2
 Title "LM399 negative voltage reference"
-Date "2018-08-17"
+Date "2018-10-04"
 Rev "v3.0.0"
 Comp ""
 Comment1 "Copyright (©) 2018, Patrick Baus <patrick.baus@physik.tu-darmstadt.de>"

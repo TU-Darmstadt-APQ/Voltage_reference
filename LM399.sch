@@ -6,7 +6,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 2
 Title "LM399 negative voltage reference"
-Date "2018-08-17"
+Date "2018-10-04"
 Rev "v3.0.0"
 Comp ""
 Comment1 "Copyright (©) 2018, Patrick Baus <patrick.baus@physik.tu-darmstadt.de>"
@@ -75,7 +75,7 @@ F 5 "GRM31C5C1H104JA01L" H 6550 5050 60  0001 C CNN "MFP"
 $EndComp
 Text Notes 1850 4000 0    60   ~ 0
 TODO:\n- use 4 drill holes to mount styrofoam
-Text Notes 7150 4700 0    60   ~ 0
+Text Notes 7350 4900 0    60   ~ 0
 Use a Film capacitor with a high insulation\nresistance (no polyester), which is stable\nover temperature. Nowadays C0G (BME) is\neven better than film.
 $Comp
 L Device:C C1
@@ -127,7 +127,7 @@ F 5 "GRM31C5C1H104JA01L" H 6200 4750 60  0001 C CNN "MFP"
 $EndComp
 Text Notes 7100 3400 0    60   ~ 0
 e.g. PCF0805-13-7K5-B-T1 (5 ppm),\nTE Connectivity RU73X2A7K5LTDF (2 ppm),\nVishay S102 (2 ppm)\n\nPCF0805-13-3K-B-T1. (5 ppm),\nVishay S102 (2 ppm)
-Text Notes 7150 4850 0    60   ~ 0
+Text Notes 7350 5050 0    60   ~ 0
 DON'T use AVX! They will melt at the spec'ed temperature
 Text Notes 4300 6300 0    60   ~ 0
 Kelvin connect this to the V_zener+ input pin
@@ -135,8 +135,8 @@ Text Notes 3150 1200 0    60   ~ 0
 Use 1 oz./sqft of copper to\nminimize trace resistance and\ntherefore minimize succeptibility\nto temperature.
 Text Notes 3200 1650 0    60   ~ 0
 Trace resistance of 0.32 Ohm\n(100mm, 4000 ppm / K) causes\na 1.5 µV / K error.
-NoConn ~ 5900 3800
-NoConn ~ 5900 4300
+NoConn ~ 6000 4350
+NoConn ~ 5900 4350
 Text HLabel 2800 2500 1    60   Output ~ 0
 V_zener+_sense
 $Comp
@@ -209,8 +209,6 @@ Wire Wire Line
 Wire Wire Line
 	2500 2500 2500 2950
 Wire Wire Line
-	6900 2800 6900 4050
-Wire Wire Line
 	6200 4050 6900 4050
 Wire Wire Line
 	5450 4150 5600 4150
@@ -225,7 +223,6 @@ Wire Wire Line
 	5800 4350 5800 4500
 Wire Wire Line
 	5800 3100 5800 3200
-Connection ~ 6900 4800
 Wire Wire Line
 	5800 3200 6200 3200
 Wire Wire Line
@@ -285,25 +282,10 @@ Wire Wire Line
 	5450 5350 6550 5350
 Wire Wire Line
 	6900 5800 6900 5600
-$Comp
-L Linear-Technology:LTC2057(DFN) U3
-U 1 1 5A502B7D
-P 5900 4050
-F 0 "U3" H 6241 4096 50  0000 L CNN
-F 1 "LTC2057" H 6241 4005 50  0000 L CNN
-F 2 "Package_DFN_QFN:DFN-8-1EP_3x3mm_P0.5mm_EP1.66x2.38mm" H 6241 3959 50  0001 L CNN
-F 3 "" H 5950 4250 50  0000 C CNN
-F 4 "Linear Technology" H 6500 4350 60  0001 C CNN "MFN"
-F 5 "LTC2057IDD" H 6300 4450 60  0001 C CNN "MFP"
-	1    5900 4050
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5450 4150 5450 5350
 Wire Wire Line
 	5050 2800 5750 2800
-Wire Wire Line
-	6900 4050 6900 4800
 Wire Wire Line
 	6900 4050 7550 4050
 Wire Wire Line
@@ -316,4 +298,48 @@ Wire Wire Line
 	4150 3800 4150 3950
 Wire Wire Line
 	6550 5350 6750 5350
+$Comp
+L Amplifier_Operational:LT1363 U3
+U 1 1 5BB4F780
+P 5900 4050
+F 0 "U3" H 6250 4100 50  0000 L CNN
+F 1 "LT1001" H 6250 4000 50  0000 L CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5950 4100 50  0001 C CNN
+F 3 "http://www.analog.com/media/en/technical-documentation/data-sheets/1001fb.pdf" H 5950 4200 50  0001 C CNN
+F 4 "Analog Devices" H 5900 4050 50  0001 C CNN "MFN"
+F 5 "LT1001CS8" H 5900 4050 50  0001 C CNN "MFP"
+	1    5900 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Net-Tie_2 NT4
+U 1 1 5BB5735D
+P 6900 3550
+F 0 "NT4" V 6854 3638 50  0000 L CNN
+F 1 "NET-TIE" V 6945 3638 50  0000 L CNN
+F 2 "Custom_footprints:NET-TIE-0.20mm" H 6900 3450 50  0001 C CNN
+F 3 "" H 6900 3550 60  0000 C CNN
+	1    6900 3550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6900 2800 6900 3450
+Wire Wire Line
+	6900 3650 6900 4050
+$Comp
+L Device:Net-Tie_2 NT5
+U 1 1 5BB58169
+P 6900 4350
+F 0 "NT5" V 6854 4438 50  0000 L CNN
+F 1 "NET-TIE" V 6945 4438 50  0000 L CNN
+F 2 "Custom_footprints:NET-TIE-0.20mm" H 6900 4250 50  0001 C CNN
+F 3 "" H 6900 4350 60  0000 C CNN
+	1    6900 4350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6900 4050 6900 4250
+Wire Wire Line
+	6900 4450 6900 4800
+Connection ~ 6900 4800
 $EndSCHEMATC
