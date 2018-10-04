@@ -29,8 +29,6 @@ Different values are possible as well, but these values were readily available o
 
 Single supply operation is possible as long the output voltage is larger than 0.1 V.
 
-The OpAmp used is an LTC2057 zero-drift chopper amplifier. The chopping fequency is about 100 kHz. If this noise peak is causing problems, filtering will be required. Alternatively an LT1001 (http://www.linear.com/product/LT1001) could be used.
-
 Related Repositories
 --------------------
 
