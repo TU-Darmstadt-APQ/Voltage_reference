@@ -6,8 +6,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 2
 Title "LM399 negative voltage reference"
-Date "2018-10-04"
-Rev "v3.0.0"
+Date "2019-01-11"
+Rev "v3.1.0"
 Comp ""
 Comment1 "Copyright (©) 2018, Patrick Baus <patrick.baus@physik.tu-darmstadt.de>"
 Comment2 "Licensed under CERN OHL v.1.2"
@@ -122,6 +122,8 @@ F 0 "J1" H 2950 3865 50  0000 C CNN
 F 1 "CONN_02X04" H 2950 3774 50  0000 C CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_2x04_P2.54mm_Vertical" H 2950 2350 50  0001 C CNN
 F 3 "" H 2950 2350 50  0001 C CNN
+F 4 "Amphenol" H 2950 3550 50  0001 C CNN "MFN"
+F 5 "87606-804LF" H 2950 3550 50  0001 C CNN "MFP"
 	1    2950 3550
 	1    0    0    -1  
 $EndComp
@@ -228,4 +230,15 @@ Wire Wire Line
 	2650 3750 2750 3750
 Text Notes 2750 3100 0    60   ~ 0
 3.3V
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 5C37ECDE
+P 3150 3000
+F 0 "H1" H 3250 3050 50  0000 L CNN
+F 1 "MountingHole" H 3250 3000 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5_DIN965_Pad" H 3150 3000 50  0001 C CNN
+F 3 "~" H 3150 3000 50  0001 C CNN
+	1    3150 3000
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

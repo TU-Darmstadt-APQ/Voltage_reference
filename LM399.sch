@@ -6,8 +6,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 2
 Title "LM399 negative voltage reference"
-Date "2018-10-04"
-Rev "v3.0.0"
+Date "2019-01-11"
+Rev "v3.1.0"
 Comp ""
 Comment1 "Copyright (©) 2018, Patrick Baus <patrick.baus@physik.tu-darmstadt.de>"
 Comment2 "Licensed under CERN OHL v.1.2"
@@ -302,6 +302,8 @@ $Comp
 L Amplifier_Operational:LT1363 U3
 U 1 1 5BB4F780
 P 5900 4050
+AR Path="/5BB4F780" Ref="U3"  Part="1" 
+AR Path="/591A50E3/5BB4F780" Ref="U3"  Part="1" 
 F 0 "U3" H 6250 4100 50  0000 L CNN
 F 1 "LT1001" H 6250 4000 50  0000 L CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5950 4100 50  0001 C CNN
