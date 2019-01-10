@@ -1,9 +1,12 @@
 [submodule "libraries"]
 	path = libraries
 	url = https://github.com/PatrickBaus/KiCAD-libraries
+	branch = master
 [submodule "footprints.pretty"]
 	path = footprints.pretty
 	url = https://github.com/PatrickBaus/footprints.pretty
+	branch = master
 [submodule "footprints.3dshapes"]
 	path = footprints.3dshapes
 	url = https://github.com/PatrickBaus/footprints.3dshapes
+	branch = master
