@@ -15,3 +15,5 @@ Thumbs.db
 *.bak
 *.xml
 _autosave-*
+*-cache.lib
+fp-info-cache
