@@ -1,12 +1,12 @@
 Quantity Per PCB,References,Value,MFN,MFP,Description,Footprint
 3,C1 C2 C3,100n,Murata,GRM31C5C1H104JA01L,Unpolarized capacitor,C_1206_3216Metric
-1,J1,CONN_02X04,,,"Generic connector, double row, 02x04, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)",PinSocket_2x04_P2.54mm_Vertical
+1,J1,CONN_02X04,Amphenol,87606-804LF,"Generic connector, double row, 02x04, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)",PinSocket_2x04_P2.54mm_Vertical
 1,R2,200k,Susumu,RR0816P-204-D,Resistor,R_0603_1608Metric
-1,R1,7.5K,Welwyn,PCF0805-13-7K5-B-T1,Resistor,R_0603_1608Metric
-1,RN1,17k/20k,Vishay,300144Z,voltage divider in a single package,Vishay_300144
+1,R1,7.5K,Welwyn,PCF0805-13-7K5-B-T1,Resistor,R_0805_2012Metric
+1,RN1,17k/20k,Vishay,300144Z,Voltage divider,Vishay_300144
 1,U2,LM399,Linear Technology,LM399AH,"Precision Reference, 6.95V",LM399
 1,U3,LT1001,Analog Devices,LT1001CS8,"Single Ultra-Low Offset Voltage Operational Amplifier, DIP-8/SOIC-8",SOIC-8_3.9x4.9mm_P1.27mm
-1,U1,TMP236,Texas Instruments,TMP236A2DCKT,"Analog thermistor temperature sensor, Â±2.5C accuracy, -55C to +130C, SC-70-5",SOT-353_SC-70-5
+1,U1,TMP236,Texas Instruments,TMP236A2DCKT,"Analog thermistor temperature sensor, ±2.5C accuracy, -55C to +130C, SC-70-5",SOT-353_SC-70-5
 
 
 
@@ -17,7 +17,7 @@ Component Count:,10
 Fitted Components:,10
 Number of PCBs:,1
 Total components:,10
-Schematic Version:,v3.0.0
-Schematic Date:,2018-10-04
-BoM Date:,2018-10-04T03:01:15 CEST
-KiCad Version:,Eeschema (6.0.0-rc1-dev)
+Schematic Version:,v3.1.0
+Schematic Date:,2019-01-11
+BoM Date:,2019-01-11T00:52:55 CET
+KiCad Version:,Eeschema (6.0.0-rc1-dev-696-g8c56f5b03)
