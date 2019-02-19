@@ -15,21 +15,21 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Linear-Technology:LM399 U2
+L Reference_Voltage:LM399 U2
 U 1 1 591A5398
 P 4000 3300
 F 0 "U2" H 4408 3353 60  0000 L CNN
 F 1 "LM399" H 4408 3247 60  0000 L CNN
-F 2 "Custom_footprints:LM399" H 4000 3250 60  0001 C CNN
+F 2 "Custom_footprints:TO-46-4_ThermalShield" H 4000 3250 60  0001 C CNN
 F 3 "" H 4000 3250 60  0001 C CNN
-F 4 "Linear Technology" H 4000 3300 60  0001 C CNN "MFN"
+F 4 "Analog Devices" H 4000 3300 60  0001 C CNN "MFN"
 F 5 "LM399AH" H 4000 3300 60  0001 C CNN "MFP"
 	1    4000 3300
 	1    0    0    -1  
 $EndComp
-Text HLabel 3850 2400 1    60   UnSpc ~ 0
+Text HLabel 3800 2450 1    60   UnSpc ~ 0
 V-heater+
-Text HLabel 3850 3950 3    60   UnSpc ~ 0
+Text HLabel 3800 3900 3    60   UnSpc ~ 0
 V_heater-
 Text HLabel 2500 2500 1    60   UnSpc ~ 0
 V_zener+_force
@@ -165,7 +165,7 @@ Text Label 2500 2950 3    60   ~ 0
 V_zener+
 Text Label 6900 6100 3    60   ~ 0
 V_zener+
-Text Label 4150 2750 1    60   ~ 0
+Text Label 4200 2800 1    60   ~ 0
 V_zener+
 $Comp
 L Device:Net-Tie_2 NT2
@@ -203,9 +203,9 @@ Connection ~ 5050 2800
 Wire Wire Line
 	4600 2800 4600 2850
 Wire Wire Line
-	3850 2850 3850 2400
+	3800 2900 3800 2450
 Wire Wire Line
-	3850 3950 3850 3750
+	3800 3900 3800 3700
 Wire Wire Line
 	2500 2500 2500 2950
 Wire Wire Line
@@ -213,7 +213,7 @@ Wire Wire Line
 Wire Wire Line
 	5450 4150 5600 4150
 Wire Wire Line
-	4150 3950 5600 3950
+	4200 3950 5600 3950
 Wire Wire Line
 	5000 2800 5050 2800
 Wire Wire Line
@@ -238,7 +238,7 @@ Wire Wire Line
 	6200 4500 5800 4500
 Connection ~ 5800 4500
 Wire Wire Line
-	4150 3750 4150 3800
+	4200 3700 4200 3800
 Wire Wire Line
 	2500 2950 2800 2750
 Wire Wire Line
@@ -246,14 +246,14 @@ Wire Wire Line
 Wire Wire Line
 	6900 6000 6900 6100
 Wire Wire Line
-	4150 2750 4150 2850
+	4200 2800 4200 2900
 Wire Wire Line
 	5050 2800 5050 3400
 Wire Wire Line
 	5050 3600 5050 3800
 Wire Wire Line
-	5050 3800 4150 3800
-Connection ~ 4150 3800
+	5050 3800 4200 3800
+Connection ~ 4200 3800
 Wire Wire Line
 	6900 4800 6550 4800
 Wire Wire Line
@@ -295,7 +295,7 @@ Wire Wire Line
 Wire Wire Line
 	5800 4500 5800 5050
 Wire Wire Line
-	4150 3800 4150 3950
+	4200 3800 4200 3950
 Wire Wire Line
 	6550 5350 6750 5350
 $Comp
