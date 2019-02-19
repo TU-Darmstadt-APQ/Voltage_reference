@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:reference_board-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -156,7 +156,7 @@ U 1 1 5976E542
 P 6900 5900
 F 0 "NT3" V 6854 5988 50  0000 L CNN
 F 1 "NET-TIE" V 6945 5988 50  0000 L CNN
-F 2 "Custom_footprints:NET-TIE-0.15mm" H 6900 5800 50  0001 C CNN
+F 2 "Custom_footprints:NET-TIE-0.25mm" H 6900 5800 50  0001 C CNN
 F 3 "" H 6900 5900 60  0000 C CNN
 	1    6900 5900
 	0    1    1    0   
@@ -173,7 +173,7 @@ U 1 1 5976EB13
 P 5050 3500
 F 0 "NT2" V 5004 3588 50  0000 L CNN
 F 1 "NET-TIE" V 5095 3588 50  0000 L CNN
-F 2 "Custom_footprints:NET-TIE-0.20mm" H 5050 3400 50  0001 C CNN
+F 2 "Custom_footprints:NET-TIE-0.25mm" H 5050 3400 50  0001 C CNN
 F 3 "" H 5050 3500 60  0000 C CNN
 	1    5050 3500
 	0    1    1    0   
@@ -313,35 +313,35 @@ F 5 "LT1001CS8" H 5900 4050 50  0001 C CNN "MFP"
 	1    5900 4050
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	6900 2800 6900 3450
+Wire Wire Line
+	6900 3650 6900 4050
+Wire Wire Line
+	6900 4050 6900 4250
+Wire Wire Line
+	6900 4450 6900 4800
+Connection ~ 6900 4800
 $Comp
 L Device:Net-Tie_2 NT4
 U 1 1 5BB5735D
 P 6900 3550
 F 0 "NT4" V 6854 3638 50  0000 L CNN
 F 1 "NET-TIE" V 6945 3638 50  0000 L CNN
-F 2 "Custom_footprints:NET-TIE-0.20mm" H 6900 3450 50  0001 C CNN
+F 2 "Custom_footprints:NET-TIE-0.25mm" H 6900 3450 50  0001 C CNN
 F 3 "" H 6900 3550 60  0000 C CNN
 	1    6900 3550
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	6900 2800 6900 3450
-Wire Wire Line
-	6900 3650 6900 4050
 $Comp
 L Device:Net-Tie_2 NT5
 U 1 1 5BB58169
 P 6900 4350
 F 0 "NT5" V 6854 4438 50  0000 L CNN
 F 1 "NET-TIE" V 6945 4438 50  0000 L CNN
-F 2 "Custom_footprints:NET-TIE-0.20mm" H 6900 4250 50  0001 C CNN
+F 2 "Custom_footprints:NET-TIE-0.25mm" H 6900 4250 50  0001 C CNN
 F 3 "" H 6900 4350 60  0000 C CNN
 	1    6900 4350
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	6900 4050 6900 4250
-Wire Wire Line
-	6900 4450 6900 4800
-Connection ~ 6900 4800
 $EndSCHEMATC

@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:reference_board-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -194,7 +194,7 @@ $EndComp
 Wire Wire Line
 	2550 5050 2550 4950
 Wire Wire Line
-	2550 4350 2550 3750
+	2550 4350 2550 4250
 Wire Wire Line
 	2550 3750 2650 3750
 Wire Wire Line
@@ -233,12 +233,45 @@ Text Notes 2750 3100 0    60   ~ 0
 $Comp
 L Mechanical:MountingHole H1
 U 1 1 5C37ECDE
-P 3150 3000
-F 0 "H1" H 3250 3050 50  0000 L CNN
-F 1 "MountingHole" H 3250 3000 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.7mm_M2.5_DIN965_Pad" H 3150 3000 50  0001 C CNN
-F 3 "~" H 3150 3000 50  0001 C CNN
-	1    3150 3000
+P 4150 5100
+F 0 "H1" H 4250 5150 50  0000 L CNN
+F 1 "MountingHole" H 4250 5100 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5_DIN965_Pad" H 4150 5100 50  0001 C CNN
+F 3 "~" H 4150 5100 50  0001 C CNN
+	1    4150 5100
 	1    0    0    -1  
 $EndComp
+$Comp
+L Device:C C4
+U 1 1 5C6BB176
+P 1550 4650
+F 0 "C4" H 1700 4700 50  0000 L CNN
+F 1 "100n" H 1700 4600 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1588 4500 50  0001 C CNN
+F 3 "~" H 1550 4650 50  0001 C CNN
+F 4 "Murata" H 1550 4650 50  0001 C CNN "MFN"
+F 5 "GRM188R71H104KA93D" H 1550 4650 50  0001 C CNN "MFP"
+	1    1550 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1550 4500 1550 4250
+Wire Wire Line
+	1550 4250 2550 4250
+Connection ~ 2550 4250
+Wire Wire Line
+	2550 4250 2550 3750
+$Comp
+L power:GND #PWR0102
+U 1 1 5C6BC39A
+P 1550 5050
+F 0 "#PWR0102" H 1550 4800 50  0001 C CNN
+F 1 "GND" H 1555 4877 50  0000 C CNN
+F 2 "" H 1550 5050 50  0001 C CNN
+F 3 "" H 1550 5050 50  0001 C CNN
+	1    1550 5050
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1550 4800 1550 5050
 $EndSCHEMATC
