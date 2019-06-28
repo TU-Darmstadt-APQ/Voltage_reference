@@ -6,8 +6,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 2
 Title "LM399 negative voltage reference"
-Date "2019-01-11"
-Rev "v3.1.0"
+Date "2019-06-28"
+Rev "v3.1.1"
 Comp ""
 Comment1 "Copyright (©) 2018, Patrick Baus <patrick.baus@physik.tu-darmstadt.de>"
 Comment2 "Licensed under CERN OHL v.1.2"
@@ -274,4 +274,6 @@ F 3 "" H 1550 5050 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1550 4800 1550 5050
+Text Notes 4000 5500 0    60   ~ 0
+Use an RAF M2106-2545-AL, 11 mm M2.5 standoff\nto mount the reference daughter board onto the\nmain pcb.
 $EndSCHEMATC

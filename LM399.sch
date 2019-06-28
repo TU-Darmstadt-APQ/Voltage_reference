@@ -6,8 +6,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 2
 Title "LM399 negative voltage reference"
-Date "2019-01-11"
-Rev "v3.1.0"
+Date "2019-06-28"
+Rev "v3.1.1"
 Comp ""
 Comment1 "Copyright (©) 2018, Patrick Baus <patrick.baus@physik.tu-darmstadt.de>"
 Comment2 "Licensed under CERN OHL v.1.2"
@@ -17,24 +17,24 @@ $EndDescr
 $Comp
 L Reference_Voltage:LM399 U2
 U 1 1 591A5398
-P 4000 3300
-F 0 "U2" H 4408 3353 60  0000 L CNN
-F 1 "LM399" H 4408 3247 60  0000 L CNN
-F 2 "Custom_footprints:TO-46-4_ThermalShield" H 4000 3250 60  0001 C CNN
-F 3 "" H 4000 3250 60  0001 C CNN
-F 4 "Analog Devices" H 4000 3300 60  0001 C CNN "MFN"
-F 5 "LM399AH" H 4000 3300 60  0001 C CNN "MFP"
-	1    4000 3300
+P 4100 3500
+AR Path="/591A5398" Ref="U2"  Part="1" 
+AR Path="/591A50E3/591A5398" Ref="U2"  Part="1" 
+F 0 "U2" H 4300 3550 60  0000 L CNN
+F 1 "LM399" H 4300 3450 60  0000 L CNN
+F 2 "Custom_footprints:TO-46-4_ThermalShield" H 4100 3450 60  0001 C CNN
+F 3 "" H 4100 3450 60  0001 C CNN
+F 4 "Analog Devices" H 4100 3500 60  0001 C CNN "MFN"
+F 5 "LM399AH" H 4100 3500 60  0001 C CNN "MFP"
+	1    4100 3500
 	1    0    0    -1  
 $EndComp
-Text HLabel 3800 2450 1    60   UnSpc ~ 0
+Text HLabel 4000 2850 1    60   UnSpc ~ 0
 V-heater+
-Text HLabel 3800 3900 3    60   UnSpc ~ 0
+Text HLabel 4000 3900 3    60   UnSpc ~ 0
 V_heater-
 Text HLabel 2500 2500 1    60   UnSpc ~ 0
 V_zener+_force
-Text Notes 8000 5750 0    60   ~ 0
-Use precision resistors\nwith an extremly low TCR\nor a network with very good\ntracking TCR.
 $Comp
 L Device:R R1
 U 1 1 591A53BD
@@ -45,6 +45,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric" V 5830 2800 50  0001 C CNN
 F 3 "" H 5900 2800 50  0001 C CNN
 F 4 "Welwyn" H 5900 2800 60  0001 C CNN "MFN"
 F 5 "PCF0805-13-7K5-B-T1" H 5900 2800 60  0001 C CNN "MFP"
+F 6 "Panasonic ERA-6ARB752V" V 5900 2800 50  0001 C CNN "Alternative"
 	1    5900 2800
 	0    1    1    0   
 $EndComp
@@ -53,7 +54,7 @@ This resistor will supply the zener current.\nIt does not need to be exactely 3k
 Text Notes 2750 3250 0    60   ~ 0
 The LM399 has a\nTCR of 0.3 ppm/K
 Text Notes 5200 2500 0    60   ~ 0
-The output drift with the zener current\nis about 5 x 10^-3 ppm / ppm.\nIn order to meet the LM399 specs make sure the resistor\nhas a maximum TCR of 5 ppm / K (results in 0.03 ppm / K).
+The output drift with the zener current\nis about 5 x 10^-3 ppm / ppm.\nIn order to meet the LM399 specs make sure the resistor\nhas a maximum TCR of 10 ppm / K (results in 0.06 ppm / K).
 Text HLabel 5800 3100 1    60   UnSpc ~ 0
 V+
 Text HLabel 5800 5050 3    60   UnSpc ~ 0
@@ -125,8 +126,6 @@ F 5 "GRM31C5C1H104JA01L" H 6200 4750 60  0001 C CNN "MFP"
 	1    6200 4750
 	1    0    0    -1  
 $EndComp
-Text Notes 7100 3400 0    60   ~ 0
-e.g. PCF0805-13-7K5-B-T1 (5 ppm),\nTE Connectivity RU73X2A7K5LTDF (2 ppm),\nVishay S102 (2 ppm)\n\nPCF0805-13-3K-B-T1. (5 ppm),\nVishay S102 (2 ppm)
 Text Notes 7350 5050 0    60   ~ 0
 DON'T use AVX! They will melt at the spec'ed temperature
 Text Notes 4300 6300 0    60   ~ 0
@@ -165,7 +164,7 @@ Text Label 2500 2950 3    60   ~ 0
 V_zener+
 Text Label 6900 6100 3    60   ~ 0
 V_zener+
-Text Label 4200 2800 1    60   ~ 0
+Text Label 4200 3200 1    60   ~ 0
 V_zener+
 $Comp
 L Device:Net-Tie_2 NT2
@@ -203,9 +202,9 @@ Connection ~ 5050 2800
 Wire Wire Line
 	4600 2800 4600 2850
 Wire Wire Line
-	3800 2900 3800 2450
+	4000 3300 4000 2850
 Wire Wire Line
-	3800 3900 3800 3700
+	4000 3900 4000 3700
 Wire Wire Line
 	2500 2500 2500 2950
 Wire Wire Line
@@ -246,7 +245,7 @@ Wire Wire Line
 Wire Wire Line
 	6900 6000 6900 6100
 Wire Wire Line
-	4200 2800 4200 2900
+	4200 3200 4200 3300
 Wire Wire Line
 	5050 2800 5050 3400
 Wire Wire Line
@@ -344,4 +343,8 @@ F 3 "" H 6900 4350 60  0000 C CNN
 	1    6900 4350
 	0    1    1    0   
 $EndComp
+Text Notes 7000 2950 0    60   ~ 0
+e.g. ERA-6ARB752V (10 ppm)\nPCF0805-13-7K5-B-T1 (5 ppm),\nTE Connectivity RU73X2A7K5LTDF (2 ppm),\nVishay S102 (2 ppm)
+Text Notes 7350 5500 0    60   ~ 0
+17k: Pin 1 -> Pin 2\nPin 1 is correctly\nmarked on the package
 $EndSCHEMATC

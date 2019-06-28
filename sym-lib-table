@@ -1,4 +1,5 @@
 (sym_lib_table
   (lib (name Linear-Technology)(type Legacy)(uri "${KIPRJMOD}/libraries/Linear Technology.lib")(options "")(descr ""))
   (lib (name ADI)(type Legacy)(uri ${KIPRJMOD}/libraries/ADI.lib)(options "")(descr ""))
+  (lib (name Reference_Voltage)(type Legacy)(uri /home/maat/Documents/Uni/Physik/Phd/kicad-symbols/Reference_Voltage.lib)(options "")(descr "")(disabled))
 )
