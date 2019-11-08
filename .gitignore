@@ -12,6 +12,7 @@ Thumbs.db
 # KiCAD Files #
 ###############
 *.kicad_pcb-bak
+*.sch-bak
 *.bak
 *.xml
 _autosave-*

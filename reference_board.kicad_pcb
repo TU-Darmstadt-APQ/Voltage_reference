@@ -1,9 +1,9 @@
-(kicad_pcb (version 20171130) (host pcbnew 5.1.2)
+(kicad_pcb (version 20171130) (host pcbnew 5.1.4)
 
   (general
     (thickness 1.6)
     (drawings 42)
-    (tracks 179)
+    (tracks 181)
     (zones 0)
     (modules 18)
     (nets 19)
@@ -19,7 +19,7 @@
   )
 
   (layers
-    (0 F.Cu signal hide)
+    (0 F.Cu signal)
     (31 B.Cu signal)
     (36 B.SilkS user)
     (37 F.SilkS user)
@@ -1032,7 +1032,7 @@
   (gr_text Vz+s (at 153 100.4) (layer F.SilkS) (tstamp 59A34DA0)
     (effects (font (size 0.8 0.8) (thickness 0.15)))
   )
-  (gr_text "Design: Patrick Baus\nDate: 2019-06\nVersion: 3.1.1" (at 165.3 105.8) (layer B.SilkS)
+  (gr_text "Design: Patrick Baus\nDate: 2019-08\nVersion: 3.1.2" (at 165.3 105.8) (layer B.SilkS)
     (effects (font (size 0.8 0.8) (thickness 0.15)) (justify right mirror))
   )
   (gr_text "R1: 10 ppm/K max." (at 163 84.5) (layer F.SilkS)
@@ -1094,9 +1094,11 @@
   (segment (start 162.3 100) (end 162.7 100.4) (width 0.3) (layer F.Cu) (net 1))
   (segment (start 167.05 106.25) (end 167.05 105.65) (width 0.25) (layer F.Cu) (net 1))
   (segment (start 163.2125 107.1) (end 166.2 107.1) (width 0.25) (layer F.Cu) (net 1))
-  (via (at 163.2 107.0875) (size 0.8) (drill 0.4) (layers F.Cu B.Cu) (net 1))
   (segment (start 166.2 107.1) (end 167.05 106.25) (width 0.25) (layer F.Cu) (net 1))
   (segment (start 163.2 107.0875) (end 163.2125 107.1) (width 0.25) (layer F.Cu) (net 1))
+  (segment (start 163.2 107.0875) (end 162.2125 107.0875) (width 0.25) (layer F.Cu) (net 1))
+  (via (at 162.2 107.1) (size 0.8) (drill 0.4) (layers F.Cu B.Cu) (net 1))
+  (segment (start 162.2125 107.0875) (end 162.2 107.1) (width 0.25) (layer F.Cu) (net 1))
   (segment (start 154 96.035) (end 152.865 96.035) (width 0.3) (layer F.Cu) (net 2))
   (segment (start 152.7 96.2) (end 151.4 96.2) (width 0.3) (layer F.Cu) (net 2))
   (segment (start 152.865 96.035) (end 152.7 96.2) (width 0.3) (layer F.Cu) (net 2))
