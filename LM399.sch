@@ -26,6 +26,7 @@ F 2 "Custom_footprints:TO-46-4_ThermalShield" H 4100 3450 60  0001 C CNN
 F 3 "" H 4100 3450 60  0001 C CNN
 F 4 "Analog Devices" H 4100 3500 60  0001 C CNN "MFN"
 F 5 "LM399AH" H 4100 3500 60  0001 C CNN "MFP"
+F 6 "Use a TE 8060-1G12 socket to mount diodes for burn-in" H 4100 3500 50  0001 C CNN "Alternative"
 	1    4100 3500
 	1    0    0    -1  
 $EndComp
@@ -33,7 +34,7 @@ Text HLabel 4000 2850 1    60   UnSpc ~ 0
 V-heater+
 Text HLabel 4000 3900 3    60   UnSpc ~ 0
 V_heater-
-Text HLabel 2500 2500 1    60   UnSpc ~ 0
+Text HLabel 2350 2100 1    60   UnSpc ~ 0
 V_zener+_force
 $Comp
 L Device:R R1
@@ -51,7 +52,7 @@ F 6 "Panasonic ERA-6ARB752V" V 5900 2800 50  0001 C CNN "Alternative"
 $EndComp
 Text Notes 5200 1950 0    60   ~ 0
 This resistor will supply the zener current.\nIt does not need to be exactely 3k, but a\nzener current of 1 mA or slightly above is\nrecommended.\nThis resistor needs to be matched if the\namplification is changed. Currently\nI_Zener = (10 V - 6.95 V) / 3k
-Text Notes 2750 3250 0    60   ~ 0
+Text Notes 2600 2850 0    60   ~ 0
 The LM399 has a\nTCR of 0.3 ppm/K
 Text Notes 5200 2500 0    60   ~ 0
 The output drift with the zener current\nis about 5 x 10^-3 ppm / ppm.\nIn order to meet the LM399 specs make sure the resistor\nhas a maximum TCR of 10 ppm / K (results in 0.06 ppm / K).
@@ -136,17 +137,17 @@ Text Notes 3200 1650 0    60   ~ 0
 Trace resistance of 0.32 Ohm\n(100mm, 4000 ppm / K) causes\na 1.5 µV / K error.
 NoConn ~ 6000 4350
 NoConn ~ 5900 4350
-Text HLabel 2800 2500 1    60   Output ~ 0
+Text HLabel 2650 2100 1    60   Output ~ 0
 V_zener+_sense
 $Comp
 L Device:Net-Tie_2 NT1
 U 1 1 5976DF85
-P 2800 2650
-F 0 "NT1" V 2754 2738 50  0000 L CNN
-F 1 "NET-TIE" V 2845 2738 50  0000 L CNN
-F 2 "Custom_footprints:NET-TIE-0.15mm" H 2800 2550 50  0001 C CNN
-F 3 "" H 2800 2650 60  0000 C CNN
-	1    2800 2650
+P 2650 2250
+F 0 "NT1" V 2604 2338 50  0000 L CNN
+F 1 "NET-TIE" V 2695 2338 50  0000 L CNN
+F 2 "Custom_footprints:NET-TIE-0.15mm" H 2650 2150 50  0001 C CNN
+F 3 "" H 2650 2250 60  0000 C CNN
+	1    2650 2250
 	0    1    1    0   
 $EndComp
 $Comp
@@ -160,7 +161,7 @@ F 3 "" H 6900 5900 60  0000 C CNN
 	1    6900 5900
 	0    1    1    0   
 $EndComp
-Text Label 2500 2950 3    60   ~ 0
+Text Label 2350 2550 3    60   ~ 0
 V_zener+
 Text Label 6900 6100 3    60   ~ 0
 V_zener+
@@ -206,7 +207,7 @@ Wire Wire Line
 Wire Wire Line
 	4000 3900 4000 3700
 Wire Wire Line
-	2500 2500 2500 2950
+	2350 2100 2350 2550
 Wire Wire Line
 	6200 4050 6900 4050
 Wire Wire Line
@@ -239,9 +240,9 @@ Connection ~ 5800 4500
 Wire Wire Line
 	4200 3700 4200 3800
 Wire Wire Line
-	2500 2950 2800 2750
+	2350 2550 2650 2350
 Wire Wire Line
-	2800 2550 2800 2500
+	2650 2150 2650 2100
 Wire Wire Line
 	6900 6000 6900 6100
 Wire Wire Line
@@ -348,4 +349,6 @@ Text Notes 7000 2950 0    60   ~ 0
 e.g. ERA-6ARB752V (10 ppm)\nPCF0805-13-7K5-B-T1 (5 ppm),\nTE Connectivity RU73X2A7K5LTDF (2 ppm),\nVishay S102 (2 ppm)
 Text Notes 7350 5500 0    60   ~ 0
 17k: Pin 1 -> Pin 2\nPin 1 is correctly\nmarked on the package
+Text Notes 2150 3600 0    60   ~ 0
+Note: Use a TE 8060-1G12 socket\nto mount diodes for burn-in
 $EndSCHEMATC
