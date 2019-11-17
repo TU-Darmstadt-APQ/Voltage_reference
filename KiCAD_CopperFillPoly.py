@@ -6,7 +6,7 @@ import math
 LIST_pts = ["    (polygon\n      (pts\n        (xy ","    (filled_polygon\n      (pts\n        (xy ",") (xy ",")\n      )\n    )"]
 
 
-ARC = "  (gr_arc (start {center[x]:.2f} {center[y]:.2f}) (end {start[x]:.2f} {start[y]:.2f}) (angle {angle:.2f}) (layer Edge.Cuts) (width 0.15))"
+ARC = "  (gr_arc (start {center[x]:.4f} {center[y]:.4f}) (end {start[x]:.4f} {start[y]:.4f}) (angle {angle:.4f}) (layer Edge.Cuts) (width 0.15))"
 
 def draw_slotted_arc(center, inner_radius, outer_radius, slot_angle, angle_offset):
   start_angle = math.radians(45 - slot_angle / 2 + angle_offset) # radians
@@ -26,7 +26,7 @@ def draw_slotted_arc(center, inner_radius, outer_radius, slot_angle, angle_offse
 
 if __name__ == '__main__':
 
-    center = {'x': 150.0, 'y': 95.0} # x/y coordinates of the centre of the pcb sheet
+    center = {'x': 174.0, 'y': 96.0} # x/y coordinates of the centre of the pcb sheet
     inner_radius = 6.5 # mm
     outer_radius = 8 # mm
     angle = 60 # degrees
