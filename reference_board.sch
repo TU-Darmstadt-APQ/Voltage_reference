@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:reference_board-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -9,7 +8,7 @@ Title "LM399 negative voltage reference"
 Date "2019-11-20"
 Rev "v3.2.0"
 Comp ""
-Comment1 "Copyright (©) 2018, Patrick Baus <patrick.baus@physik.tu-darmstadt.de>"
+Comment1 "Copyright (©) 2020, Patrick Baus <patrick.baus@physik.tu-darmstadt.de>"
 Comment2 "Licensed under CERN OHL v.1.2"
 Comment3 ""
 Comment4 ""
