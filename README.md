@@ -3,7 +3,7 @@ LM399 Sub-ppm Reference Voltage
 
 This repository contains the KiCAD PCB project files for a sub-ppm temperature coefficient __negative voltage reference__ used in our laser drivers.
 
-![LM399 reference board](images/reference_board.png)
+![LM399 reference board](images/board.png)
 
 About
 -----
