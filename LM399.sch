@@ -16,392 +16,374 @@ $EndDescr
 $Comp
 L Reference_Voltage:LM399 U2
 U 1 1 591A5398
-P 3500 3500
+P 3550 3050
 AR Path="/591A5398" Ref="U2"  Part="1" 
 AR Path="/591A50E3/591A5398" Ref="U2"  Part="1" 
-F 0 "U2" H 3700 3550 60  0000 L CNN
-F 1 "LM399" H 3700 3450 60  0000 L CNN
-F 2 "Custom_footprints:TO-46-4_ThermalShield" H 3500 3450 60  0001 C CNN
-F 3 "" H 3500 3450 60  0001 C CNN
-F 4 "Analog Devices" H 3500 3500 60  0001 C CNN "MFN"
-F 5 "LM399AH" H 3500 3500 60  0001 C CNN "MFP"
-F 6 "Use a TE 8060-1G12 socket to mount diodes for burn-in" H 3500 3500 50  0001 C CNN "Alternative"
-	1    3500 3500
+F 0 "U2" H 3750 3100 60  0000 L CNN
+F 1 "LM399" H 3750 3000 60  0000 L CNN
+F 2 "Custom_footprints:TO-46-4_ThermalShield" H 3550 3000 60  0001 C CNN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/199399fc.pdf" H 3550 3000 60  0001 C CNN
+F 4 "Analog Devices" H 3550 3050 60  0001 C CNN "MFN"
+F 5 "LM399AH" H 3550 3050 50  0001 C CNN "PN"
+F 6 "Use a TE 8060-1G12 socket to mount diodes for burn-in" H 3550 3050 50  0001 C CNN "Note"
+F 7 "-PCBA" H 3550 3050 50  0001 C CNN "Config"
+	1    3550 3050
 	1    0    0    -1  
 $EndComp
-Text HLabel 3400 2850 1    60   UnSpc ~ 0
+Text HLabel 3450 2400 1    60   UnSpc ~ 0
 V-heater+
-Text HLabel 3400 3900 3    60   UnSpc ~ 0
+Text HLabel 3450 3450 3    60   UnSpc ~ 0
 V_heater-
-Text HLabel 1750 2250 1    60   UnSpc ~ 0
+Text HLabel 4300 4550 1    60   UnSpc ~ 0
 V_zener+_force
 $Comp
 L Device:R R1
 U 1 1 591A53BD
-P 5900 2800
-F 0 "R1" V 5693 2800 50  0000 C CNN
-F 1 "7.5K" V 5784 2800 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 5830 2800 50  0001 C CNN
-F 3 "" H 5900 2800 50  0001 C CNN
-F 4 "Welwyn" H 5900 2800 60  0001 C CNN "MFN"
-F 5 "PCF0805-13-7K5-B-T1" H 5900 2800 60  0001 C CNN "MFP"
-F 6 "Panasonic ERA-6ARB752V" V 5900 2800 50  0001 C CNN "Alternative"
-	1    5900 2800
+P 5950 2350
+F 0 "R1" V 5743 2350 50  0000 C CNN
+F 1 "7.5K" V 5834 2350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5880 2350 50  0001 C CNN
+F 3 "" H 5950 2350 50  0001 C CNN
+F 4 "Welwyn" H 5950 2350 60  0001 C CNN "MFN"
+F 5 "PCF0805-13-7K5-B-T1" H 5950 2350 50  0001 C CNN "PN"
+F 6 "Panasonic ERA-6ARB752V" V 5950 2350 50  0001 C CNN "Alternative"
+	1    5950 2350
 	0    1    1    0   
 $EndComp
-Text Notes 5200 1950 0    60   ~ 0
-This resistor will supply the zener current.\nIt does not need to be exactely 7.5k, but a\nzener current of 1 mA or slightly above is\nrecommended.\nThis resistor needs to be matched if the\namplification is changed. Currently\nI_Zener = (15 V - 6.95 V) / 7.5k
-Text Notes 2000 3000 0    60   ~ 0
-The LM399 has a\nTCR of 0.3 ppm/K
-Text Notes 5200 2500 0    60   ~ 0
-The output drift with the zener current\nis about 5 x 10^-3 ppm / ppm.\nIn order to meet the LM399 specs make sure the resistor\nhas a maximum TCR of 10 ppm / K (results in 0.06 ppm / K).
-Text HLabel 5800 3100 1    60   UnSpc ~ 0
+Text HLabel 5850 2650 1    60   UnSpc ~ 0
 V+
-Text HLabel 5800 5050 3    60   UnSpc ~ 0
+Text HLabel 5850 4600 3    60   UnSpc ~ 0
 V-
-Text HLabel 7550 4050 2    60   Output ~ 0
+Text HLabel 7600 3600 2    60   Output ~ 0
 V_zener-
 $Comp
 L Device:C C3
 U 1 1 591A53CC
-P 6550 5050
-F 0 "C3" H 6665 5096 50  0000 L CNN
-F 1 "100n" H 6665 5005 50  0000 L CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric" H 6588 4900 50  0001 C CNN
-F 3 "" H 6550 5050 50  0001 C CNN
-F 4 "Murata" H 6550 5050 60  0001 C CNN "MFN"
-F 5 "GRM31C5C1H104JA01L" H 6550 5050 60  0001 C CNN "MFP"
-	1    6550 5050
+P 6600 4600
+F 0 "C3" H 6715 4646 50  0000 L CNN
+F 1 "100n" H 6715 4555 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 6638 4450 50  0001 C CNN
+F 3 "" H 6600 4600 50  0001 C CNN
+F 4 "Murata" H 6600 4600 60  0001 C CNN "MFN"
+F 5 "GRM31C5C1H104JA01L" H 6600 4600 50  0001 C CNN "PN"
+	1    6600 4600
 	1    0    0    -1  
 $EndComp
-Text Notes 1250 4000 0    60   ~ 0
-TODO:\n- use 4 drill holes to mount styrofoam
-Text Notes 7350 4900 0    60   ~ 0
-Use a Film capacitor with a high insulation\nresistance (no polyester), which is stable\nover temperature. Nowadays C0G (BME) is\neven better than film.
 $Comp
 L Device:C C1
 U 1 1 591A5401
-P 6200 3450
-F 0 "C1" H 6315 3496 50  0000 L CNN
-F 1 "100n" H 6315 3405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric" H 6238 3300 50  0001 C CNN
-F 3 "" H 6200 3450 50  0001 C CNN
-F 4 "Murata" H 6200 3450 60  0001 C CNN "MFN"
-F 5 "GRM31C5C1H104JA01L" H 6200 3450 60  0001 C CNN "MFP"
-	1    6200 3450
+P 6250 3000
+F 0 "C1" H 6365 3046 50  0000 L CNN
+F 1 "100n" H 6365 2955 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 6288 2850 50  0001 C CNN
+F 3 "" H 6250 3000 50  0001 C CNN
+F 4 "Murata" H 6250 3000 60  0001 C CNN "MFN"
+F 5 "GRM31C5C1H104JA01L" H 6250 3000 50  0001 C CNN "PN"
+	1    6250 3000
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR02
 U 1 1 591A540B
-P 6200 3700
-F 0 "#PWR02" H 6200 3450 50  0001 C CNN
-F 1 "GND" H 6205 3527 50  0000 C CNN
-F 2 "" H 6200 3700 50  0001 C CNN
-F 3 "" H 6200 3700 50  0001 C CNN
-	1    6200 3700
+P 6250 3250
+F 0 "#PWR02" H 6250 3000 50  0001 C CNN
+F 1 "GND" H 6255 3077 50  0000 C CNN
+F 2 "" H 6250 3250 50  0001 C CNN
+F 3 "" H 6250 3250 50  0001 C CNN
+	1    6250 3250
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR03
 U 1 1 591A5416
-P 6200 5000
-F 0 "#PWR03" H 6200 4750 50  0001 C CNN
-F 1 "GND" H 6205 4827 50  0000 C CNN
-F 2 "" H 6200 5000 50  0001 C CNN
-F 3 "" H 6200 5000 50  0001 C CNN
-	1    6200 5000
+P 6250 4550
+F 0 "#PWR03" H 6250 4300 50  0001 C CNN
+F 1 "GND" H 6255 4377 50  0000 C CNN
+F 2 "" H 6250 4550 50  0001 C CNN
+F 3 "" H 6250 4550 50  0001 C CNN
+	1    6250 4550
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C2
 U 1 1 591A541E
-P 6200 4750
-F 0 "C2" H 6315 4796 50  0000 L CNN
-F 1 "100n" H 6315 4705 50  0000 L CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric" H 6238 4600 50  0001 C CNN
-F 3 "" H 6200 4750 50  0001 C CNN
-F 4 "Murata" H 6200 4750 60  0001 C CNN "MFN"
-F 5 "GRM31C5C1H104JA01L" H 6200 4750 60  0001 C CNN "MFP"
-	1    6200 4750
+P 6250 4300
+F 0 "C2" H 6365 4346 50  0000 L CNN
+F 1 "100n" H 6365 4255 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 6288 4150 50  0001 C CNN
+F 3 "" H 6250 4300 50  0001 C CNN
+F 4 "Murata" H 6250 4300 60  0001 C CNN "MFN"
+F 5 "GRM31C5C1H104JA01L" H 6250 4300 50  0001 C CNN "PN"
+	1    6250 4300
 	1    0    0    -1  
 $EndComp
-Text Notes 7350 5050 0    60   ~ 0
-DON'T use AVX! They will melt at the spec'ed temperature
-Text Notes 4300 6300 0    60   ~ 0
-Kelvin connect this to the V_zener+ input pin
-Text Notes 1400 900  0    60   ~ 0
-Use 1 oz./sqft of copper to\nminimize trace resistance and\ntherefore minimize succeptibility\nto temperature.
-Text Notes 1400 1300 0    60   ~ 0
-Trace resistance of 0.32 Ohm\n(100mm, 4000 ppm / K) causes\na 1.5 µV / K error.
-NoConn ~ 6000 4350
-NoConn ~ 5900 4350
-Text HLabel 2050 2250 1    60   Output ~ 0
+NoConn ~ 6050 3900
+NoConn ~ 5950 3900
+Text HLabel 4600 4550 1    60   Output ~ 0
 V_zener+_sense
 $Comp
 L Device:Net-Tie_2 NT1
 U 1 1 5976DF85
-P 2050 2400
-F 0 "NT1" V 2004 2488 50  0000 L CNN
-F 1 "NET-TIE" V 2095 2488 50  0000 L CNN
-F 2 "Custom_footprints:NET-TIE-0.15mm" H 2050 2300 50  0001 C CNN
-F 3 "" H 2050 2400 60  0000 C CNN
-	1    2050 2400
+P 4600 4700
+F 0 "NT1" V 4554 4788 50  0000 L CNN
+F 1 "NET-TIE" V 4645 4788 50  0000 L CNN
+F 2 "Custom_footprints:NET-TIE-0.15mm" H 4600 4600 50  0001 C CNN
+F 3 "" H 4600 4700 60  0000 C CNN
+	1    4600 4700
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:Net-Tie_2 NT3
 U 1 1 5976E542
-P 6900 5900
-F 0 "NT3" V 6854 5988 50  0000 L CNN
-F 1 "NET-TIE" V 6945 5988 50  0000 L CNN
-F 2 "Custom_footprints:NET-TIE-0.25mm" H 6900 5800 50  0001 C CNN
-F 3 "" H 6900 5900 60  0000 C CNN
-	1    6900 5900
+P 6950 5450
+F 0 "NT3" V 6904 5538 50  0000 L CNN
+F 1 "NET-TIE" V 6995 5538 50  0000 L CNN
+F 2 "Custom_footprints:NET-TIE-0.25mm" H 6950 5350 50  0001 C CNN
+F 3 "" H 6950 5450 60  0000 C CNN
+	1    6950 5450
 	0    1    1    0   
 $EndComp
-Text Label 1750 2700 3    60   ~ 0
+Text Label 4300 5000 3    60   ~ 0
 V_zener+
-Text Label 6900 6100 3    60   ~ 0
+Text Label 6950 5650 3    60   ~ 0
 V_zener+
-Text Label 3600 3200 1    60   ~ 0
+Text Label 3650 2750 1    60   ~ 0
 V_zener+
 $Comp
 L Device:Net-Tie_2 NT2
 U 1 1 5976EB13
-P 5050 3500
-F 0 "NT2" V 5004 3588 50  0000 L CNN
-F 1 "NET-TIE" V 5095 3588 50  0000 L CNN
-F 2 "Custom_footprints:NET-TIE-0.25mm" H 5050 3400 50  0001 C CNN
-F 3 "" H 5050 3500 60  0000 C CNN
-	1    5050 3500
+P 5100 3050
+F 0 "NT2" V 5054 3138 50  0000 L CNN
+F 1 "NET-TIE" V 5145 3138 50  0000 L CNN
+F 2 "Custom_footprints:NET-TIE-0.25mm" H 5100 2950 50  0001 C CNN
+F 3 "" H 5100 3050 60  0000 C CNN
+	1    5100 3050
 	0    1    1    0   
 $EndComp
-Text Notes 700  4800 0    60   ~ 0
-Kelvin connect the Zener. Even the the small current\npassing through R1 (1 mA) will introduce an error of 0.2 ppm/K\ngiven a normal PCB copper trace.\n(10 mm trace 0=> 0.2 ohm, 1 mA, 0.7 % tcr, ~~7 V reference)
-Text Notes 1950 5600 0    60   ~ 0
-Output voltage Table:\nVoltage   | R1    | R2  | R3\n------------------\n-10 V    | 3k    | 9k  | 20k\n-15 V    | 7.89k | 20k | 17k
-Text Notes 8350 3800 0    60   ~ 0
-Information on insulation resistance can be found here:\nhttp://www.iequalscdvdt.com/Insulation_resis_.html\nhttps://www.vishay.com/docs/26033/gentechinfofilm.pdf
 Wire Wire Line
-	3400 3300 3400 2850
+	3450 2850 3450 2400
 Wire Wire Line
-	3400 3900 3400 3700
+	3450 3450 3450 3250
 Wire Wire Line
-	1750 2250 1750 2700
+	4300 4550 4300 5000
 Wire Wire Line
-	6200 4050 6900 4050
+	6250 3600 6950 3600
 Wire Wire Line
-	5450 4150 5600 4150
+	5500 3700 5650 3700
 Wire Wire Line
-	3600 3950 5600 3950
+	3650 3500 5650 3500
 Wire Wire Line
-	6050 2800 6900 2800
-Connection ~ 6900 4050
+	6100 2350 6950 2350
+Connection ~ 6950 3600
 Wire Wire Line
-	5800 4350 5800 4500
+	5850 3900 5850 4050
 Wire Wire Line
-	5800 3100 5800 3200
+	5850 2650 5850 2750
 Wire Wire Line
-	5800 3200 6200 3200
+	5850 2750 6250 2750
 Wire Wire Line
-	6200 3200 6200 3300
-Connection ~ 5800 3200
+	6250 2750 6250 2850
+Connection ~ 5850 2750
 Wire Wire Line
-	6200 3600 6200 3700
+	6250 3150 6250 3250
 Wire Wire Line
-	6200 4500 6200 4600
+	6250 4050 6250 4150
 Wire Wire Line
-	6200 4900 6200 5000
+	6250 4450 6250 4550
 Wire Wire Line
-	6200 4500 5800 4500
-Connection ~ 5800 4500
+	6250 4050 5850 4050
+Connection ~ 5850 4050
 Wire Wire Line
-	3600 3700 3600 3800
+	3650 3250 3650 3350
 Wire Wire Line
-	1750 2700 2050 2500
+	4300 5000 4600 4800
 Wire Wire Line
-	2050 2300 2050 2250
+	4600 4600 4600 4550
 Wire Wire Line
-	6900 6000 6900 6100
+	6950 5550 6950 5650
 Wire Wire Line
-	3600 3200 3600 3300
+	3650 2750 3650 2850
 Wire Wire Line
-	5050 2800 5050 3400
+	5100 2350 5100 2950
 Wire Wire Line
-	5050 3600 5050 3800
+	5100 3150 5100 3350
 Wire Wire Line
-	5050 3800 3600 3800
-Connection ~ 3600 3800
+	5100 3350 3650 3350
+Connection ~ 3650 3350
 Wire Wire Line
-	6900 4800 6550 4800
+	6950 4350 6600 4350
 Wire Wire Line
-	6550 4800 6550 4900
+	6600 4350 6600 4450
 Wire Wire Line
-	6550 5350 6550 5200
-Connection ~ 6550 5350
-Text Notes 8400 1950 0    60   ~ 0
-Mount the LM399 a *little* off the board,\nto keep stress away.\nSource: http://www.eevblog.com/forum/\nmetrology/ultra-precision-reference-ltz1000/\nmsg404500/#msg404500
+	6600 4900 6600 4750
+Connection ~ 6600 4900
 $Comp
 L Device:Voltage_Divider RN1
 U 1 1 5A502407
-P 6900 5350
-F 0 "RN1" H 6821 5304 50  0000 R CNN
-F 1 "17k/20k" H 6821 5395 50  0000 R CNN
-F 2 "Custom_footprints:Vishay_300144" V 7375 5350 50  0001 C CNN
-F 3 "" H 7100 5350 50  0001 C CNN
-F 4 "Vishay" H 6900 5350 60  0001 C CNN "MFN"
-F 5 "300144Z" H 6900 5350 60  0001 C CNN "MFP"
-	1    6900 5350
+P 6950 4900
+F 0 "RN1" H 6871 4854 50  0000 R CNN
+F 1 "17k/20k" H 6871 4945 50  0000 R CNN
+F 2 "Custom_footprints:Vishay_300144" V 7425 4900 50  0001 C CNN
+F 3 "http://www.vishaypg.com/docs/63115/144Z145Z.pdf" H 7150 4900 50  0001 C CNN
+F 4 "Vishay" H 6950 4900 60  0001 C CNN "MFN"
+F 5 "Y1691V0689BB9L" H 6950 4900 50  0001 C CNN "PN"
+F 6 "Vishay 300144Z, 0.1% abs. tol. 0.1% ratio tol." H 6950 4900 50  0001 C CNN "Note"
+F 7 "-PCBA" H 6950 4900 50  0001 C CNN "Config"
+	1    6950 4900
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	5450 5350 6550 5350
+	5500 4900 6600 4900
 Wire Wire Line
-	6900 5800 6900 5600
+	6950 5350 6950 5150
 Wire Wire Line
-	5450 4150 5450 5350
+	5500 3700 5500 4900
 Wire Wire Line
-	5050 2800 5750 2800
+	5100 2350 5800 2350
 Wire Wire Line
-	6900 4050 7550 4050
+	6950 3600 7600 3600
 Wire Wire Line
-	6900 4800 6900 5100
+	6950 4350 6950 4650
 Wire Wire Line
-	5800 3200 5800 3750
+	5850 2750 5850 3300
 Wire Wire Line
-	5800 4500 5800 5050
+	5850 4050 5850 4600
 Wire Wire Line
-	3600 3800 3600 3950
+	3650 3350 3650 3500
 Wire Wire Line
-	6550 5350 6750 5350
+	6600 4900 6800 4900
 $Comp
 L Amplifier_Operational:LT1363 U3
 U 1 1 5BB4F780
-P 5900 4050
+P 5950 3600
 AR Path="/5BB4F780" Ref="U3"  Part="1" 
 AR Path="/591A50E3/5BB4F780" Ref="U3"  Part="1" 
-F 0 "U3" H 6250 4100 50  0000 L CNN
-F 1 "LT1001" H 6250 4000 50  0000 L CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5950 4100 50  0001 C CNN
-F 3 "http://www.analog.com/media/en/technical-documentation/data-sheets/1001fb.pdf" H 5950 4200 50  0001 C CNN
-F 4 "Analog Devices" H 5900 4050 50  0001 C CNN "MFN"
-F 5 "LT1001CS8" H 5900 4050 50  0001 C CNN "MFP"
-F 6 "TI OPA277U" H 5900 4050 50  0001 C CNN "Alternative"
-	1    5900 4050
+F 0 "U3" H 6300 3650 50  0000 L CNN
+F 1 "LT1001" H 6300 3550 50  0000 L CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 6000 3650 50  0001 C CNN
+F 3 "http://www.analog.com/media/en/technical-documentation/data-sheets/1001fb.pdf" H 6000 3750 50  0001 C CNN
+F 4 "Analog Devices" H 5950 3600 50  0001 C CNN "MFN"
+F 5 "LT1001CS8" H 5950 3600 50  0001 C CNN "PN"
+F 6 "TI OPA277U" H 5950 3600 50  0001 C CNN "Alternative"
+	1    5950 3600
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6900 2800 6900 3450
+	6950 2350 6950 3000
 Wire Wire Line
-	6900 3650 6900 4050
+	6950 3200 6950 3600
 Wire Wire Line
-	6900 4050 6900 4250
+	6950 3600 6950 3800
 Wire Wire Line
-	6900 4450 6900 4800
-Connection ~ 6900 4800
+	6950 4000 6950 4350
+Connection ~ 6950 4350
 $Comp
 L Device:Net-Tie_2 NT4
 U 1 1 5BB5735D
-P 6900 3550
-F 0 "NT4" V 6854 3638 50  0000 L CNN
-F 1 "NET-TIE" V 6945 3638 50  0000 L CNN
-F 2 "Custom_footprints:NET-TIE-0.25mm" H 6900 3450 50  0001 C CNN
-F 3 "" H 6900 3550 60  0000 C CNN
-	1    6900 3550
+P 6950 3100
+F 0 "NT4" V 6904 3188 50  0000 L CNN
+F 1 "NET-TIE" V 6995 3188 50  0000 L CNN
+F 2 "Custom_footprints:NET-TIE-0.25mm" H 6950 3000 50  0001 C CNN
+F 3 "" H 6950 3100 60  0000 C CNN
+	1    6950 3100
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:Net-Tie_2 NT5
 U 1 1 5BB58169
-P 6900 4350
-F 0 "NT5" V 6854 4438 50  0000 L CNN
-F 1 "NET-TIE" V 6945 4438 50  0000 L CNN
-F 2 "Custom_footprints:NET-TIE-0.25mm" H 6900 4250 50  0001 C CNN
-F 3 "" H 6900 4350 60  0000 C CNN
-	1    6900 4350
+P 6950 3900
+F 0 "NT5" V 6904 3988 50  0000 L CNN
+F 1 "NET-TIE" V 6995 3988 50  0000 L CNN
+F 2 "Custom_footprints:NET-TIE-0.25mm" H 6950 3800 50  0001 C CNN
+F 3 "" H 6950 3900 60  0000 C CNN
+	1    6950 3900
 	0    1    1    0   
 $EndComp
-Text Notes 7000 2950 0    60   ~ 0
-e.g. ERA-6ARB752V (10 ppm)\nPCF0805-13-7K5-B-T1 (5 ppm),\nTE Connectivity RU73X2A7K5LTDF (2 ppm),\nVishay S102 (2 ppm)
-Text Notes 7350 5500 0    60   ~ 0
-17k: Pin 1 -> Pin 2\nPin 1 is correctly\nmarked on the package
-Text Notes 1550 3600 0    60   ~ 0
-Note: Use a TE 8060-1G12 socket\nto mount diodes for burn-in
 $Comp
 L power:GND #PWR0103
 U 1 1 5DD6028A
-P 4300 3200
-F 0 "#PWR0103" H 4300 2950 50  0001 C CNN
-F 1 "GND" H 4305 3027 50  0000 C CNN
-F 2 "" H 4300 3200 50  0001 C CNN
-F 3 "" H 4300 3200 50  0001 C CNN
-	1    4300 3200
+P 4350 2750
+F 0 "#PWR0103" H 4350 2500 50  0001 C CNN
+F 1 "GND" H 4355 2577 50  0000 C CNN
+F 2 "" H 4350 2750 50  0001 C CNN
+F 3 "" H 4350 2750 50  0001 C CNN
+	1    4350 2750
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4300 3200 4300 3150
+	4350 2750 4350 2700
 $Comp
 L Device:R R3
 U 1 1 5DD610DD
-P 4300 2600
-F 0 "R3" H 4400 2650 50  0000 L CNN
-F 1 "10k" H 4400 2550 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 4230 2600 50  0001 C CNN
-F 3 "~" H 4300 2600 50  0001 C CNN
-F 4 "Susumu" H 4300 2600 50  0001 C CNN "MFN"
-F 5 "RR0816P-103-D" H 4300 2600 50  0001 C CNN "MFP"
-	1    4300 2600
+P 4350 2150
+F 0 "R3" H 4450 2200 50  0000 L CNN
+F 1 "10k" H 4450 2100 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4280 2150 50  0001 C CNN
+F 3 "~" H 4350 2150 50  0001 C CNN
+F 4 "Susumu" H 4350 2150 50  0001 C CNN "MFN"
+F 5 "RR0816P-103-D" H 4350 2150 50  0001 C CNN "PN"
+	1    4350 2150
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R2
 U 1 1 5DD614F5
-P 4300 3000
-F 0 "R2" H 4400 3050 50  0000 L CNN
-F 1 "30k" H 4400 2950 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 4230 3000 50  0001 C CNN
-F 3 "~" H 4300 3000 50  0001 C CNN
-F 4 "Susumu" H 4300 3000 50  0001 C CNN "MFN"
-F 5 "RR0816P-303-D" H 4300 3000 50  0001 C CNN "MFP"
-	1    4300 3000
+P 4350 2550
+F 0 "R2" H 4450 2600 50  0000 L CNN
+F 1 "30k" H 4450 2500 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4280 2550 50  0001 C CNN
+F 3 "~" H 4350 2550 50  0001 C CNN
+F 4 "Susumu" H 4350 2550 50  0001 C CNN "MFN"
+F 5 "RR0816P-303-D" H 4350 2550 50  0001 C CNN "PN"
+	1    4350 2550
 	1    0    0    -1  
 $EndComp
-Text HLabel 4300 2350 1    60   UnSpc ~ 0
+Text HLabel 4350 1900 1    60   UnSpc ~ 0
 V_zener+_force
 Wire Wire Line
-	4300 2350 4300 2450
+	4350 1900 4350 2000
 Wire Wire Line
-	4300 2750 4300 2800
+	4350 2300 4350 2350
 $Comp
 L Device:D D1
 U 1 1 5DD64006
-P 4850 2800
-F 0 "D1" H 4850 3050 50  0000 C CNN
-F 1 "BAQ333" H 4850 2950 50  0000 C CNN
-F 2 "Diode_SMD:D_MicroMELF" H 4850 2800 50  0001 C CNN
-F 3 "~" H 4850 2800 50  0001 C CNN
-F 4 "Vishay" H 4850 2800 50  0001 C CNN "MFN"
-F 5 "BAQ333-TR" H 4850 2800 50  0001 C CNN "MFP"
-	1    4850 2800
+P 4900 2350
+F 0 "D1" H 4900 2600 50  0000 C CNN
+F 1 "BAS116" H 4900 2500 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-123" H 4900 2350 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/BAS116GW.pdf" H 4900 2350 50  0001 C CNN
+F 4 "Nexperia" H 4900 2350 50  0001 C CNN "MFN"
+F 5 "Use a plastic package to eliminate light sensitivity" H 4900 2350 50  0001 C CNN "Note"
+F 6 "BAS116GWJ" H 4900 2350 50  0001 C CNN "PN"
+	1    4900 2350
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5050 2800 5000 2800
-Connection ~ 5050 2800
+	5100 2350 5050 2350
+Connection ~ 5100 2350
 Wire Wire Line
-	4700 2800 4300 2800
-Connection ~ 4300 2800
+	4750 2350 4350 2350
+Connection ~ 4350 2350
 Wire Wire Line
-	4300 2800 4300 2850
+	4350 2350 4350 2400
 Wire Notes Line
-	4000 1500 4950 1500
+	4050 1050 5000 1050
 Wire Notes Line
-	4950 1500 4950 3500
+	5000 1050 5000 3050
 Wire Notes Line
-	4950 3500 4000 3500
+	5000 3050 4050 3050
 Wire Notes Line
-	4000 3500 4000 1500
-Text Notes 3800 1400 0    60   ~ 0
+	4050 3050 4050 1050
+Text Notes 5100 1700 0    60   ~ 0
 Startup circuit:\nDoes not cause zener shift\nwith different V_zener+
+Wire Notes Line
+	4650 2300 4650 1900
+Wire Notes Line
+	4650 1900 5200 1900
+Wire Notes Line
+	4650 2300 4700 2250
+Wire Notes Line
+	4650 2300 4600 2250
+Text Notes 5250 1950 0    60   ~ 0
+Voltage here should be a few Volts above (Vreg-7V)
 $EndSCHEMATC

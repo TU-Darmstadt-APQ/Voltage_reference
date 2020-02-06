@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 2
 Title "LM399 negative voltage reference"
-Date "2019-11-20"
-Rev "v3.2.0"
+Date "2020-02-06"
+Rev "v3.2.1"
 Comp ""
 Comment1 "Copyright (©) 2020, Patrick Baus <patrick.baus@physik.tu-darmstadt.de>"
 Comment2 "Licensed under CERN OHL v.1.2"
@@ -122,7 +122,7 @@ F 1 "CONN_02X04" H 2950 3774 50  0000 C CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_2x04_P2.54mm_Vertical" H 2950 2350 50  0001 C CNN
 F 3 "" H 2950 2350 50  0001 C CNN
 F 4 "Amphenol" H 2950 3550 50  0001 C CNN "MFN"
-F 5 "87606-804LF" H 2950 3550 50  0001 C CNN "MFP"
+F 5 "87606-804LF" H 2950 3550 50  0001 C CNN "PN"
 	1    2950 3550
 	1    0    0    -1  
 $EndComp
@@ -175,7 +175,7 @@ F 1 "TMP236" H 2200 4600 50  0000 R CNN
 F 2 "Package_TO_SOT_SMD:SOT-353_SC-70-5" H 2550 4250 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tmp235.pdf" H 2550 4650 50  0001 C CNN
 F 4 "Texas Instruments" H 2550 4650 50  0001 C CNN "MFN"
-F 5 "TMP236A2DCKT" H 2550 4650 50  0001 C CNN "MFP"
+F 5 "TMP236A2DCKT" H 2550 4650 50  0001 C CNN "PN"
 	1    2550 4650
 	1    0    0    -1  
 $EndComp
@@ -247,7 +247,7 @@ F 1 "100n" H 1600 4600 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric" H 1488 4500 50  0001 C CNN
 F 3 "~" H 1450 4650 50  0001 C CNN
 F 4 "Murata" H 1450 4650 50  0001 C CNN "MFN"
-F 5 "GRM188R71H104KA93D" H 1450 4650 50  0001 C CNN "MFP"
+F 5 "GRM188R71H104KA93D" H 1450 4650 50  0001 C CNN "PN"
 	1    1450 4650
 	1    0    0    -1  
 $EndComp
