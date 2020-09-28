@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 2 2
 Title "LM399 negative voltage reference"
 Date "2019-11-20"
-Rev "v3.2.0"
+Rev "v3.2.2"
 Comp ""
 Comment1 "Copyright (©) 2020, Patrick Baus <patrick.baus@physik.tu-darmstadt.de>"
 Comment2 "Licensed under CERN OHL v.1.2"
@@ -21,11 +21,11 @@ AR Path="/591A5398" Ref="U2"  Part="1"
 AR Path="/591A50E3/591A5398" Ref="U2"  Part="1" 
 F 0 "U2" H 3750 3100 60  0000 L CNN
 F 1 "LM399" H 3750 3000 60  0000 L CNN
-F 2 "Custom_footprints:TO-46-4_ThermalShield" H 3550 3000 60  0001 C CNN
+F 2 "Custom_footprints:Analog_TO-46-4_ThermalShield" H 3550 3000 60  0001 C CNN
 F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/199399fc.pdf" H 3550 3000 60  0001 C CNN
 F 4 "Analog Devices" H 3550 3050 60  0001 C CNN "MFN"
 F 5 "LM399AH" H 3550 3050 50  0001 C CNN "PN"
-F 6 "Use a TE 8060-1G12 socket to mount diodes for burn-in" H 3550 3050 50  0001 C CNN "Note"
+F 6 "Use a TE 8060-1G12 or TE 8060-G22 socket to mount diodes for burn-in" H 3550 3050 50  0001 C CNN "Note"
 F 7 "-PCBA" H 3550 3050 50  0001 C CNN "Config"
 	1    3550 3050
 	1    0    0    -1  
@@ -386,4 +386,36 @@ Wire Notes Line
 	4650 2300 4600 2250
 Text Notes 5250 1950 0    60   ~ 0
 Voltage here should be a few Volts above (Vreg-7V)
+Text Notes 2350 950  0    60   ~ 0
+Use 1 oz./sqft of copper to\nminimize trace resistance and\ntherefore minimize succeptibility\nto temperature.
+Text Notes 2350 1350 0    60   ~ 0
+Trace resistance of 0.32 Ohm\n(100mm, 4000 ppm / K) causes\na 1.5 µV / K error.
+Text Notes 2350 2850 0    60   ~ 0
+The LM399 has a\nTCR of 0.3 ppm/K
+Text Notes 1950 3430 0    60   ~ 0
+Note: Use a TE 8060-1G12\nor 8060-1G22 socket to\nmount diodes for burn-in.\nThe 1G22 is smaller in\nheight, but harder to get.
+Text Notes 1150 5200 0    60   ~ 0
+Kelvin connect the Zener. Even the the small current\npassing through R1 (1 mA) will introduce an error of 0.2 ppm/K\ngiven a normal PCB copper trace.\n(10 mm trace 0=> 0.2 ohm, 1 mA, 0.7 % tcr, ~~7 V reference)
+Text Notes 2050 6000 0    60   ~ 0
+Output voltage Table:\nVoltage   | R1    | R2  | R3\n------------------\n-10 V    | 3k    | 9k  | 20k\n-15 V    | 7.5k  | 20k | 17k
+Text Notes 7850 2700 0    60   ~ 0
+This resistor will supply the zener current.\nIt does not need to be exactely 7.5k, but a\nzener current of 1 mA or slightly above is\nrecommended.\nThis resistor needs to be matched if the\namplification is changed. Currently\nI_Zener = (15 V - 6.95 V) / 7.5k
+Wire Notes Line
+	6250 2250 7750 2250
+Wire Notes Line
+	6250 2250 6300 2300
+Wire Notes Line
+	6250 2250 6300 2200
+Text Notes 7850 3200 0    60   ~ 0
+The output drift with the zener current\nis about 0.15 ppm / ppm maximum.\nIn order to meet the LM399 specs make sure the resistor\nhas a maximum TCR of 10 ppm / K (results in 1.5 ppm / K).
+Text Notes 8450 3600 0    60   ~ 0
+e.g. ERA-6ARB752V (10 ppm)\nPCF0805-13-7K5-B-T1 (5 ppm),\nTE Connectivity RU73X2A7K5LTDF (2 ppm),\nVishay S102 (2 ppm)
+Text Notes 7650 4650 0    60   ~ 0
+Use a Film capacitor with a high insulation\nresistance (no polyester), which is stable\nover temperature. Nowadays C0G (BME) is\neven better than film.\nInformation on insulation resistance can be found here:\nhttp://www.iequalscdvdt.com/Insulation_resis_.html\nhttps://www.vishay.com/docs/26033/gentechinfofilm.pdf
+Text Notes 7650 5150 0    60   ~ 0
+17k: Pin 1 <-> Pin 2\n20k: Pin 2 <-> Pin 3\nPin 1 is marked on\nthe package
+Text Notes 4750 5500 0    60   ~ 0
+Kelvin connect this to the V_zener+ input pin
+Text Notes 7850 1550 0    60   ~ 0
+Mount the LM399 a *little* off the board,\nto keep stress away.\nSource: http://www.eevblog.com/forum/\nmetrology/ultra-precision-reference-ltz1000/\nmsg404500/#msg404500
 $EndSCHEMATC
