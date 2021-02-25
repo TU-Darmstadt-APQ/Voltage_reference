@@ -397,7 +397,7 @@ Note: Use a TE 8060-1G12\nor 8060-1G22 socket to\nmount diodes for burn-in.\nThe
 Text Notes 1150 5200 0    60   ~ 0
 Kelvin connect the Zener. Even the the small current\npassing through R1 (1 mA) will introduce an error of 0.2 ppm/K\ngiven a normal PCB copper trace.\n(10 mm trace 0=> 0.2 ohm, 1 mA, 0.7 % tcr, ~~7 V reference)
 Text Notes 2050 6000 0    60   ~ 0
-Output voltage Table:\nVoltage   | R1    | R2  | R3\n------------------\n-10 V    | 3k    | 9k  | 20k\n-15 V    | 7.5k  | 20k | 17k
+Output voltage Table:\nVoltage   | R1    | RN1a  | RN1b\n-----------------------\n-10 V    | 3k    |   20k  | 9k\n-15 V    | 7.5k  |   17k  | 20k
 Text Notes 7850 2700 0    60   ~ 0
 This resistor will supply the zener current.\nIt does not need to be exactely 7.5k, but a\nzener current of 1 mA or slightly above is\nrecommended.\nThis resistor needs to be matched if the\namplification is changed. Currently\nI_Zener = (15 V - 6.95 V) / 7.5k
 Wire Notes Line
