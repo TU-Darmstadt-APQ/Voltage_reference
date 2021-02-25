@@ -7,7 +7,7 @@ Component,Quantity Per PCB,References,Value,MFN,PN,Description,Footprint,Note,Al
 6,1,R2,30k,Susumu,RR0816P-303-D,Resistor,R_0603_1608Metric,,
 7,1,R1,7.5K,Welwyn,PCF0805-13-7K5-B-T1,Resistor,R_0805_2012Metric,,Panasonic ERA-6ARB752V
 8,1,RN1,17k/20k,Vishay,Y1691V0689BB9L,Voltage divider,Vishay_300144,"Vishay 300144Z, 0.1% abs. tol. 0.1% ratio tol.",
-9,1,U2,LM399,Analog Devices,LM399AH,"Precision Reference, 6.95V, Buried Zener Diode with Thermal Shielding Can",TO-46-4_ThermalShield,Use a TE 8060-1G12 socket to mount diodes for burn-in,
+9,1,U2,LM399,Analog Devices,LM399AH,"Precision Reference, 6.95V, Buried Zener Diode with Thermal Shielding Can, TO-46-4",Analog_TO-46-4_ThermalShield,Use a TE 8060-1G12 or TE 8060-G22 socket to mount diodes for burn-in,
 10,1,U3,LT1001,Analog Devices,LT1001CS8,"70MHz, 1000V/µs Operational Amplifier, DIP-8/SOIC-8",SOIC-8_3.9x4.9mm_P1.27mm,,TI OPA277U
 11,1,U1,TMP236,Texas Instruments,TMP236A2DCKT,"Analog thermistor temperature sensor, ±2.5C accuracy, -55C to +130C, SC-70-5",SOT-353_SC-70-5,,
 
@@ -20,9 +20,9 @@ Component Count:,13
 Fitted Components:,13
 Number of PCBs:,1
 Total components:,13
-Schematic Version:,v3.2.1
+Schematic Version:,v3.2.2
 Schematic Date:,2020-02-06
 PCB Variant:,default
-BoM Date:,2020-02-06T17:09:21 CET
+BoM Date:,2021-02-25T18:31:33 CET
 Schematic Source:,/home/maat/Documents/Uni/Physik/Phd/DgDrive/KiCAD/reference_board/reference_board.sch
-KiCad Version:,Eeschema 5.1.5
+KiCad Version:,Eeschema 5.1.9
