@@ -345,10 +345,10 @@ Kelvin connect this to the V_zener+ input pin
 Text Notes 7850 1550 0    60   ~ 0
 Mount the LM399 a *little* off the board,\nto keep stress away.\nSource: http://www.eevblog.com/forum/\nmetrology/ultra-precision-reference-ltz1000/\nmsg404500/#msg404500
 $Comp
-L Device:Q_PJFET_DSG Q?
+L Device:Q_PJFET_DSG Q1
 U 1 1 60A667B8
 P 4600 2450
-F 0 "Q?" H 4800 2500 50  0000 L CNN
+F 0 "Q1" H 4800 2500 50  0000 L CNN
 F 1 "J270" H 4800 2400 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 4800 2550 50  0001 C CNN
 F 3 "~" H 4600 2450 50  0001 C CNN
@@ -369,10 +369,10 @@ Wire Wire Line
 Wire Wire Line
 	4600 2800 4600 2650
 $Comp
-L Device:R R?
+L Device:R R2
 U 1 1 60A9337F
 P 4150 2350
-F 0 "R?" V 3943 2350 50  0000 C CNN
+F 0 "R2" V 3943 2350 50  0000 C CNN
 F 1 "2k" V 4034 2350 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 4080 2350 50  0001 C CNN
 F 3 "" H 4150 2350 50  0001 C CNN

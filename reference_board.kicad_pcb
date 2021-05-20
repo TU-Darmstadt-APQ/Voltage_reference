@@ -65,7 +65,7 @@
     (aux_axis_origin 0 0)
     (visible_elements FFFFFF7F)
     (pcbplotparams
-      (layerselection 0x210f0_ffffffff)
+      (layerselection 0x310f0_ffffffff)
       (usegerberextensions false)
       (usegerberattributes false)
       (usegerberadvancedattributes false)
@@ -255,6 +255,11 @@
     (pad 1 thru_hole oval (at 0 0) (size 1.6 1.2) (drill 0.7) (layers *.Cu *.Mask)
       (net 7 /Zener+_force))
     (model ${KISYS3DMOD}/Package_TO_SOT_THT.3dshapes/Analog_TO-46-4_ThermalShield.wrl
+      (at (xyz 0 0 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 0))
+    )
+    (model ${KIPRJMOD}/footprints.3dshapes/Analog_TO-46-4_ThermalShield.step
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -1351,7 +1356,7 @@
   (segment (start 120.5 66.3) (end 120.5 67.05) (width 0.25) (layer F.Cu) (net 19))
   (segment (start 120.675 66.125) (end 120.5 66.3) (width 0.25) (layer F.Cu) (net 19))
 
-  (zone (net 1) (net_name GND) (layer B.Cu) (tstamp 60A690BA) (hatch edge 0.508)
+  (zone (net 1) (net_name GND) (layer B.Cu) (tstamp 60A6922C) (hatch edge 0.508)
     (connect_pads (clearance 0.35))
     (min_thickness 0.25)
     (fill yes (arc_segments 16) (thermal_gap 0.15) (thermal_bridge_width 0.5) (smoothing chamfer) (radius 0.2))
