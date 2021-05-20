@@ -311,7 +311,7 @@ Wire Notes Line
 Wire Notes Line
 	3600 3050 3600 2000
 Text Notes 4100 1850 0    60   ~ 0
-Startup circuit:\nIt does not cause zener shift\nwith different V_zener+\nThe gate of the JFET is held\nat the positive supply of the zener.\nThe JFET will therefore conduct and\npull the negative leg of the zener down\nuntil the its source (the negative leg of\nthe zener) is abour 2 V to 4 V below the\nsupply. It will then turn off and leakage\nwill be on the order of a few pA.\nThe 2k resistor is for protection only.
+Startup circuit:\nIt does not cause zener shift\nwith different V_zener+.\nThe gate of the JFET is held\nat the positive supply of the zener.\nThe JFET will therefore conduct and\npull the negative leg of the zener down\nuntil its source (the negative leg of\nthe zener) is about 2 V to 4 V below the\nsupply. It will then turn off and leakage\nwill be on the order of a few pA.\nThe 2k resistor is for protection only.
 Text Notes 2350 950  0    60   ~ 0
 Use 1 oz./sqft of copper to\nminimize trace resistance and\ntherefore minimize succeptibility\nto temperature.
 Text Notes 2350 1350 0    60   ~ 0
