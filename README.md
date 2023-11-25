@@ -1,4 +1,4 @@
-[![Build manufacturing files](https://github.com/TU-Darmstadt-APQ/DIN_41612_Backplane/actions/workflows/ci.yml/badge.svg)](https://github.com/TU-Darmstadt-APQ/DIN_41612_Backplane/actions/workflows/ci.yml)
+[![Build manufacturing files](https://github.com/TU-Darmstadt-APQ/Voltage_reference/actions/workflows/ci.yml/badge.svg)](https://github.com/TU-Darmstadt-APQ/Voltage_reference/actions/workflows/ci.yml)
 # LM399 Sub-ppm Reference Voltage
 
 This repository contains the KiCAD PCB project files for a sub-ppm temperature coefficient __negative voltage reference__ used in our laser drivers.
