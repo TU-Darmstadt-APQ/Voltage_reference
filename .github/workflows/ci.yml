@@ -22,8 +22,8 @@ on:
       - published
 
 env:
-  SCHEMATIC_FILE: main.kicad_sch
-  PCB_FILE: main.kicad_pcb
+  SCHEMATIC_FILE: reference_board.kicad_sch
+  PCB_FILE: reference_board.kicad_pcb
   KIBOT_CONFIG: config.kibot.yaml
 
 jobs:
