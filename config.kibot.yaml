@@ -12,6 +12,10 @@ variants:
     comment: 'The default version using an LM399'
     type: kibom
     file_id: _(default)
+  - name: 'PCBA'
+    comment: 'The variant for the  boardhouse. It excludes the precision parts that need be tested separately.'
+    type: kibom
+    file_id: _(PCBA)
 
 outputs:
   - name: 'gerbers'
