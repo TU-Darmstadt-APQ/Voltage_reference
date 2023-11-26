@@ -6,10 +6,10 @@
 
   (title_block
     (title "LM399 negative voltage reference")
-    (date "2023-11-25")
+    (date "2023-11-26")
     (rev "v3.4.1")
-    (comment 1 "Copyright (©) 2022, Patrick Baus <patrick.baus@physik.tu-darmstadt.de>")
-    (comment 2 "Licensed under CERN OHL v.1.2")
+    (comment 1 "Copyright (©) 2023, Patrick Baus <patrick.baus@physik.tu-darmstadt.de>")
+    (comment 2 "Licensed under CERN OHL-W v2.0")
   )
 
   (lib_symbols

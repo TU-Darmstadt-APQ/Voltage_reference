@@ -16,6 +16,7 @@ variants:
     comment: 'The variant for the  boardhouse. It excludes the precision parts that need be tested separately.'
     type: kibom
     file_id: _(PCBA)
+    variant: PCBA
 
 outputs:
   - name: 'gerbers'
@@ -112,7 +113,7 @@ outputs:
     dir: schematics
     options:
       title: "+ (%V variant)"
-      output: '%I%v.%x'
+      output: '%f_%I%v.%x'
     output_id: 'schematics'  # Used for the %I expansion int the output file name
 
   - name: 'compress_bom'
