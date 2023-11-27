@@ -25,17 +25,8 @@ Different values are possible as well, but these values were readily available o
 Single supply operation is possible as long the output voltage is larger than 0.1 V.
 
 ## Design Files
-### Variants
-Two variants of the design files are provided for the user. There is a so-called *default* variant and a *PCBA* (Printed Circuit Board Assembly) variant.
-
-#### Default variant
-The default variant contains the full set of components and should be used for hand assembly when a set of binned and tested components is available. It includes both the Zener reference and resistive divider which need to be tested for popcorn noise and drift before installation.
-
-#### PCBA variant
-The PCBA variant should be used when sending the boards to the PCB manufacturer for assembly as they do not contain the [LM399](https://www.analog.com/en/products/lm399.html)/[ADR1399](https://www.analog.com/en/products/adr1399.html) Zener reference and the precision resistor array to amplify the output voltage. These components need to be binned prior to installation and should therefore not be placed by the board house.
-
 ### For production
-The design files can be found on the [releases](../../releases) page and include the following resources:
+The design files required for the PCB production and assembly can be found on the [releases](../../releases) page and include the following resources:
 
 - Schematics as a PDF
 - Gerber files
@@ -43,6 +34,15 @@ The design files can be found on the [releases](../../releases) page and include
 - Bill of materials as a CSV file and also as an interactive HTML version
 
 The latest revision of those files can be found [here](../../releases/latest).
+
+#### Variants
+Two variants of the design files are provided for the user. There is a so-called *default* variant and a *PCBA* (Printed Circuit Board Assembly) variant.
+
+##### Default variant
+The default variant contains the full set of components and should be used for hand assembly when a set of binned and tested components is available. It includes both the Zener reference and resistive divider which need to be tested for popcorn noise and drift before installation.
+
+##### PCBA variant
+The PCBA variant should be used when sending the boards to the PCB manufacturer for assembly as they do not contain the [LM399](https://www.analog.com/en/products/lm399.html)/[ADR1399](https://www.analog.com/en/products/adr1399.html) Zener reference and the precision resistor array to amplify the output voltage. These components need to be binned prior to installation and should therefore not be placed by the board house.
 
 ### For editing
 To work on the [KiCad](https://www.kicad.org/) design files a number of external libraries are needed. Those libraries show up as empty folders in the zip file, because they are not included in the release, but must be downloaded separately from the links given [below](#related-repositories). This can be avoided by checking out the whole repository using git. This way the libraries will be downloaded as well. Use the following command to clone the git repository along with the submodules  using the `--recurse-submodules` flag.
