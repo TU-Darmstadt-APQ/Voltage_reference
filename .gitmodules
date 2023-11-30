@@ -6,3 +6,6 @@
 	path = footprints.3dshapes
 	url = https://github.com/PatrickBaus/footprints.3dshapes
 	branch = master
+[submodule "KiCad-libraries"]
+	path = libraries
+	url = https://github.com/PatrickBaus/KiCad-libraries.git
