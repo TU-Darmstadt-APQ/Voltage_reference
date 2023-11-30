@@ -1649,9 +1649,9 @@
       (net 7 "Net-(U3--)") (pintype "passive") (tstamp 6cd3193e-a018-4929-b498-d25782e31976))
     (pad "3" thru_hole circle (at 5.08 0) (size 1.5 1.5) (drill 0.8) (layers "*.Cu" "*.Mask")
       (net 17 "Net-(C6-Pad1)") (pintype "passive") (tstamp b942104e-f333-4fa5-b200-bfdc3968cd51))
-    (model "${KIPRJMOD}/footprints.3dshapes/Vishay_300144.wrl"
+    (model "${KIPRJMOD}/footprints.3dshapes/R_Array_Box3_L7.5mm_W2.5mm_P2.54mm.wrl"
       (offset (xyz 0 0 0))
-      (scale (xyz 0.3937 0.3937 0.3937))
+      (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
   )
