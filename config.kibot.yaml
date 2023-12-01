@@ -113,7 +113,7 @@ outputs:
     dir: schematics
     options:
       title: "+ (%V variant)"
-      output: '%f_%I%v.%x'
+      output: '%I%v.%x'
     output_id: 'schematics'  # Used for the %I expansion int the output file name
 
   - name: 'compress_bom'
