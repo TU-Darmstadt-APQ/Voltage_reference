@@ -1,7 +1,7 @@
 [![Build manufacturing files](https://github.com/TU-Darmstadt-APQ/Voltage_reference/actions/workflows/ci.yml/badge.svg)](https://github.com/TU-Darmstadt-APQ/Voltage_reference/actions/workflows/ci.yml)
 # LM399 Sub-ppm Reference Voltage
 
-This repository contains the KiCAD PCB project files for a sub-ppm temperature coefficient __negative voltage reference__ used in our laser drivers.
+This repository contains the KiCAD PCB project files for a sub-ppm temperature coefficient __negative voltage reference__ used in the [digital laser driver design](https://github.com/TU-Darmstadt-APQ/DgDrive).
 
 ![LM399 reference board](images/board.png)
 
@@ -9,9 +9,9 @@ This repository contains the KiCAD PCB project files for a sub-ppm temperature c
 
 ![LM399 reference board circuit](images/reference_board_circuit.png)
 
-This circuit utilizes the excellent LM399 voltage reference and outputs and amplified voltage of either -10 V or -15 V. There is no option to trim the output voltage as the absolute value is not that important, but stability is. The output voltage will be 10 V / 15 V __below__ the positive Zener voltage.
+This circuit utilizes the excellent [LM399](https://www.analog.com/en/products/lm399.html) voltage reference and outputs an amplified voltage of either -10 V or -15 V. There is no option to trim the output voltage as the absolute value is not that important, but stability is. The output voltage will be 10 V / 15 V __below__ the positive pin of the Zener diode.
 
-The design is a self-biased circuit, that means the Zener diode bias current is produced by the Zener voltage and therefore as stable as the reference (neglecting the influence of the bias current on the Zener voltage, which is negligible). In order to keep the Zener current as low possible, a Zener current of a little more than 1 mA was chosen.
+The design is a self-biased circuit, which means the Zener diode bias current is produced by the Zener voltage and therefore as stable as the reference (neglecting the influence of the bias current on the Zener voltage as it is negligible). In order to keep the Zener self-heating of the diode as low possible, a Zener current of a little more than 1 mA was chosen for the  [LM399](https://www.analog.com/en/products/lm399.html).
 
 Reference table for choosing the resistor values:
 
