@@ -1287,7 +1287,7 @@
     (property "Value" "17k/20k" (at 178.5366 125.603 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "Custom_footprints:Vishay_300144" (at 164.465 124.46 90)
+    (property "Footprint" "Custom_footprints:R_Array_Box3_L7.5mm_W2.5mm_P2.54mm_Vishay_300144" (at 164.465 124.46 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 171.45 124.46 0)
