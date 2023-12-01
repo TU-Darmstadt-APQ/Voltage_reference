@@ -847,7 +847,7 @@
     (uuid 5edcefbe-9766-42c8-9529-28d0ec865573)
   )
   (text "Mount the LM399 a *little* off the board,\nto keep stress away.\nSource: http://www.eevblog.com/forum/\nmetrology/ultra-precision-reference-ltz1000/\nmsg404500/#msg404500"
-    (at 300.99 57.15 0)
+    (at 226.06 74.93 0)
     (effects (font (size 1.524 1.524)) (justify left bottom))
     (uuid 658dad07-97fd-466c-8b49-21892ac96ea4)
   )
