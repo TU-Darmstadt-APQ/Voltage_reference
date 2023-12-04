@@ -45,7 +45,7 @@ The default variant contains the full set of components and should be used for h
 The PCBA variant should be used when sending the boards to the PCB manufacturer for assembly as they do not contain the [LM399](https://www.analog.com/en/products/lm399.html)/[ADR1399](https://www.analog.com/en/products/adr1399.html) Zener reference and the precision resistor array to amplify the output voltage. These components need to be binned prior to installation and should therefore not be placed by the board house.
 
 ### For editing
-To work on the [KiCad](https://www.kicad.org/) design files a number of external libraries are needed. Those libraries show up as empty folders in the zip file, because they are not included in the release, but must be downloaded separately from the links given [below](#related-repositories). This can be avoided by checking out the whole repository using git. This way the libraries will be downloaded as well. Use the following command to clone the git repository along with the submodules  using the `--recurse-submodules` flag.
+To work on the [KiCad](https://www.kicad.org/) design files, a number of external libraries are needed. Those libraries show up as empty folders in the zip file, because they are not included in the release, but must be downloaded separately from the links given [below](#related-repositories). This can be avoided by checking out the whole repository using git. This way the libraries will be downloaded as well. Use the following command to clone the git repository along with the submodules  using the `--recurse-submodules` flag.
 ```
 git clone --recurse-submodules https://github.com/TU-Darmstadt-APQ/Voltage_reference
 ```
