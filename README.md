@@ -1,4 +1,6 @@
+[![GitHub release](https://img.shields.io/github/release/TU-Darmstadt-APQ/Voltage_reference.svg)](https://github.com/TU-Darmstadt-APQ/Voltage_reference/releases/latest)
 [![Build manufacturing files](https://github.com/TU-Darmstadt-APQ/Voltage_reference/actions/workflows/ci.yml/badge.svg)](https://github.com/TU-Darmstadt-APQ/Voltage_reference/actions/workflows/ci.yml)
+![License: CERN-OHL-W-2.0](https://img.shields.io/github/license/TU-Darmstadt-APQ/Voltage_reference?color=blue)
 # LM399 Sub-ppm Reference Voltage
 
 This repository contains the KiCAD PCB project files for a sub-ppm temperature coefficient __negative voltage reference__ used in the [digital laser driver design](https://github.com/TU-Darmstadt-APQ/DgDrive).
