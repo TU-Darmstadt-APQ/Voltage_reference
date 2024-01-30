@@ -1,6 +1,19 @@
 kibot:
   version: 1
 
+globals:
+  # Filters for KiBot warnings
+  filters:
+    - filter: Ignore missing KiCad config, not in docker images
+      number: 8
+    - filter: Ignore missing KiCad 3D models, not in docker images
+      number: 10
+    - filter: Ignore missing KiCad config from KiAuto, not in docker images
+      number: 58
+      regex: kicad_common.json
+  # This will undo the `set_text_variables` when we run it locally
+  restore_project: true
+
 preflight:
   run_drc: true
   run_erc: true
@@ -52,11 +65,11 @@ outputs:
       - 'B.Silkscreen'
       - 'F.Mask'
       - 'B.Mask'
+      - 'User.Comments'
+      - 'User.Drawings'
       - 'Edge.Cuts'
       - 'F.Fab'
       - 'B.Fab'
-      - 'User.Comments'
-      - 'User.Drawings'
 
   - name: 'excellon_drill'
     comment: 'Create the Excellon drill files to go with the Gerber files'
@@ -113,7 +126,7 @@ outputs:
     dir: schematics
     options:
       title: "+ (%V variant)"
-      output: '%I%v.%x'
+      output: '%f_%I_%sr%v.%x'
     output_id: 'schematics'  # Used for the %I expansion int the output file name
 
   - name: 'compress_bom'
@@ -135,7 +148,7 @@ outputs:
       files:
         - from_output: gerbers
         - from_output: excellon_drill
-      output: '%I.%x'
+      output: '%I%v.%x'
     output_id: 'gerbers'  # Used for the %I expansion int the output file name
 
   - name: 'compress_position'
