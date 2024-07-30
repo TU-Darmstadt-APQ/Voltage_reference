@@ -15,10 +15,12 @@ globals:
   restore_project: true
 
 preflight:
-  run_drc: true
-  run_erc: true
   update_xml: true
-  ignore_unconnected: false
+  drc:
+    ignore_unconnected: false
+    filters:
+  erc:
+    dont_stop: true  # Required for KiCad < 8.0.2 as some of the symbols and footprints are only included in Kicad 8.0.2
 
 variants:
   - name: 'default'
