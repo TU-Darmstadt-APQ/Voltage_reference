@@ -1,0 +1,246 @@
+name: "Workflow to build manufacturing files of one project"
+
+on:
+  workflow_call:
+    inputs:
+      schematic:
+        required: true
+        type: string
+      pcb:
+        required: true
+        type: string
+      config:
+        required: true
+        type: string
+      name:
+        required: true
+        type: string
+      variants:
+        required: true
+        type: string
+        default: "[ 'default', ]"
+
+jobs:
+  tests:
+    name: Run tests
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      revision: ${{ steps.extract_sch_revision.outputs.value }}
+      basename: ${{ steps.repo-basename.outputs.value }}
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v7
+
+      - name: Parse repository name
+        id: repo-basename
+        run: |
+          echo "value=$(basename ${{ github.repository }})" >> $GITHUB_OUTPUT
+        shell: bash
+
+      - name: Extract schematic revision
+        id: extract_sch_revision
+        run: |
+          echo "value=$(perl -0777 -ne "print /\(title_block.+\(rev \"(.+?)\"\)/sg" ${{ inputs.schematic }})" >>${GITHUB_OUTPUT}
+        shell: bash
+
+      - name: Extract PCB revision
+        id: extract_pcb_revision
+        run: |
+          echo "value=$(perl -0777 -ne "print /\(title_block.+\(rev \"(.+?)\"\)/sg" ${{ inputs.pcb }})" >>${GITHUB_OUTPUT}
+        shell: bash
+
+      - name: Extract PCB revision label
+        id: extract_pcb_revision_label
+        run: |
+          echo "value=$(perl -0777 -ne "print /\(gr_text \".+\\\nVersion: (.+?)(?:\\\n|\")/g" ${{ inputs.pcb }})" >>${GITHUB_OUTPUT}
+        shell: bash
+
+      - name: Test if the revision number was extracted
+        if: steps.extract_sch_revision.outputs.value == ''
+        run: |
+          echo "::error::Failed to extract revision number from schematic file: ${{ inputs.schematic }}"
+          exit 1
+        shell: bash
+
+      - name: Test schematic revision == pcb revision
+        if: steps.extract_sch_revision.outputs.value != steps.extract_pcb_revision.outputs.value
+        run: |
+          echo "::error::Revision number of the schematic (${{ steps.extract_sch_revision.outputs.value }}) does not match PCB (${{ steps.extract_pcb_revision.outputs.value }}) revision."
+          exit 1
+        shell: bash
+
+      - name: Test revision label == pcb revision
+        if: steps.extract_pcb_revision_label.outputs.value != steps.extract_pcb_revision.outputs.value
+        run: |
+          echo "::error::Revision number of the PCB label (${{ steps.extract_pcb_revision_label.outputs.value }}) does not match PCB (${{ steps.extract_pcb_revision.outputs.value }}) revision."
+          exit 1
+        shell: bash
+
+      - name: Test for correct git tag
+        if: github.event.action == 'published' && github.event.release.tag_name !=  steps.extract_pcb_revision.outputs.value
+        run: |
+          echo "::error::Revision number of the schematic/PCB (${{ steps.extract_pcb_revision.outputs.value }}) does not match the Github tag (${{ github.event.release.tag_name }})."
+          exit 1
+        shell: bash
+
+  ERC:
+    name: Run ERC
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    needs: tests
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v7
+        with:
+          submodules: true
+
+      - name: Run ERC
+        uses: INTI-CMNB/KiBot@v2_dk10
+        with:
+          config: ${{ inputs.config }}
+          schema: ${{ inputs.schematic }}
+          dir: generated
+          skip: drc
+          targets: __NONE__  # Only run preflights
+
+      - name: Upload results
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ inputs.name }}_ERC_Output
+          path: generated
+          retention-days: 7
+
+  DRC:
+    name: Run DRC
+    runs-on: ubuntu-latest
+    needs: tests
+    permissions:
+      contents: read
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v7
+        with:
+          submodules: true
+
+      - name: Run DRC
+        uses: INTI-CMNB/KiBot@v2_dk10
+        with:
+          config: ${{ inputs.config }}
+          board: ${{ inputs.pcb }}
+          dir: generated
+          skip: erc
+          targets: __NONE__  # Only run preflights
+
+      - name: Upload results
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ inputs.name }}_DRC_Output
+          path: generated
+          retention-days: 7
+
+  fabrication_output:
+    name: 'Produce fabrication outputs'
+    runs-on: ubuntu-latest
+    needs: [ERC, DRC]
+    permissions:
+      contents: read
+    strategy:
+      matrix:
+        variant: ${{ fromJSON(inputs.variants) }}
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v7
+        with:
+          submodules: true
+
+      - uses: INTI-CMNB/KiBot@v2_dk10
+        with:
+          config: ${{ inputs.config }}
+          schema: ${{ inputs.schematic }}
+          board: ${{ inputs.pcb }}
+          skip: erc,drc
+          variant: ${{ matrix.variant }}
+          verbose: 0  # use 3 for debugging
+
+      - name: Upload bill of materials files as artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ inputs.name }}-manufacturing_files-bom-${{ matrix.variant }}
+          path: bom_files_compressed
+          retention-days: 7
+
+      - name: Upload schematic files as artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ inputs.name }}-manufacturing_files-schematics-${{ matrix.variant }}
+          path: schematics
+          retention-days: 7
+
+      - name: Upload Gerber files as artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ inputs.name }}-manufacturing_files-gerber-${{ matrix.variant }}
+          path: gerber_files_compressed
+          retention-days: 7
+
+  release:
+    name: 'Upload manufacturing files to release'
+    runs-on: ubuntu-latest
+    needs: [tests, fabrication_output]
+    permissions:
+      contents: write
+    if: github.event.action == 'published'
+    strategy:
+      matrix:
+        variant: ${{ fromJSON(inputs.variants) }}
+    steps:
+      - name: Download manufacturing files artifact
+        uses: actions/download-artifact@v8
+        with:
+          path: ${{ inputs.name }}-manufacturing_files
+          pattern: ${{ inputs.name }}-manufacturing_files-*
+          merge-multiple: true
+
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: ./${{ inputs.name }}-manufacturing_files
+        shell: bash
+
+      - name: Append BOM (bill of materials) as asset
+        run: |
+          mv "./${{ inputs.name }}-manufacturing_files/bom_(${{ matrix.variant }}).zip" "${{ inputs.name }}_bom_${{ needs.tests.outputs.revision }}_${{ matrix.variant }}.zip"
+          gh release upload ${{ github.event.release.tag_name }} "${{ inputs.name }}_bom_${{ needs.tests.outputs.revision }}_${{ matrix.variant }}.zip"#"Bill of materials for the ${{ matrix.variant }} variant (zip)" --repo ${{ github.repository }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+
+      - name: Append schematics as asset
+        run: |
+          mv "./${{ inputs.name }}-manufacturing_files/$(basename ${{ inputs.schematic }} .kicad_sch)_schematics_${{ needs.tests.outputs.revision }}_(${{ matrix.variant }}).pdf" "${{ inputs.name }}_schematics_${{ needs.tests.outputs.revision }}_${{ matrix.variant }}.pdf"
+          gh release upload ${{ github.event.release.tag_name }} "${{ inputs.name }}_schematics_${{ needs.tests.outputs.revision }}_${{ matrix.variant }}.pdf"#"Schematics for the ${{ matrix.variant }} variant (pdf)" --repo ${{ github.repository }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+
+      - name: Append position files as asset
+        run: |
+          mv "./${{ inputs.name }}-manufacturing_files/pos_(${{ matrix.variant }}).zip" "${{ inputs.name }}_position_${{ needs.tests.outputs.revision }}_${{ matrix.variant }}.zip"
+          gh release upload ${{ github.event.release.tag_name }} "${{ inputs.name }}_position_${{ needs.tests.outputs.revision }}_${{ matrix.variant }}.zip"#"Pick & Place position files for the ${{ matrix.variant }} variant (zip)" --repo ${{ github.repository }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+
+      - name: Append Gerber files as asset
+        if: matrix.variant == 'default'
+        run: |
+          mv "./${{ inputs.name }}-manufacturing_files/gerbers_(${{ matrix.variant }}).zip" "${{ inputs.name }}_gerber_${{ needs.tests.outputs.revision }}_all.zip"
+          gh release upload ${{ github.event.release.tag_name }} "${{ inputs.name }}_gerber_${{ needs.tests.outputs.revision }}_all.zip"#"Gerber files for all variants (zip)" --repo ${{ github.repository }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
