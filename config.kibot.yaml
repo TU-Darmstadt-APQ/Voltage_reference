@@ -23,7 +23,7 @@ preflight:
 
 variants:
   - name: 'default'
-    comment: 'The default version using an LM399'
+    comment: 'The default version with all parts populated'
     type: kibom
     file_id: _(default)
   - name: 'PCBA'
