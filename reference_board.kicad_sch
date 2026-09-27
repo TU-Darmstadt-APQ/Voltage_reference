@@ -2017,7 +2017,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Use an RAF M2106-2545-AL, 11 mm M2.5 standoff\nto mount the reference daughter board onto the\nmain pcb."
+	(text "Use a Würth Elektronik 9774045151R, 4.5 mm M2.5 standoff\nto mount the reference daughter board onto the\nmain pcb."
 		(exclude_from_sim no)
 		(at 116.84 139.7 0)
 		(effects

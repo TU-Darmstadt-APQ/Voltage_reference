@@ -8084,8 +8084,8 @@
 			(justify mirror)
 		)
 	)
-	(gr_text "Use RAF M2106-2545-AL, 11 mm M2.5 standoff"
-		(at 135.5 47.5 0)
+	(gr_text "Use WE 9774045151R, 4.5 mm M2.5 standoff"
+		(at 95 77.5 0)
 		(layer "Cmts.User")
 		(uuid "a5e521b9-814e-4853-a5ac-f158785c6269")
 		(effects
