@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "ADR1399 negative voltage reference")
-		(date "2026-09-18")
-		(rev "3.5.0")
+		(date "2026-09-27")
+		(rev "4.0.0")
 		(company "Quantum Electronic Devices GmbH")
 		(comment 1 "Copyright (©) 2026, Patrick Baus <patrick.baus@quantum-electronic-devices.de>")
 		(comment 2 "Licensed under CERN OHL-W v2.0")
