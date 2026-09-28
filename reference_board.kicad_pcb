@@ -7849,7 +7849,7 @@
 			(justify left)
 		)
 	)
-	(gr_text "Manufacturing Instruction:\n- Material FR-4\n- Finished thickness: 1.57 mm ± 0.13 mm\n- Surface finish: ENIG\n- PCBs must be RoHS compliant\n- Do not edit artwork, e.g. to add logos\n   or order numbers\n- Clean to meet IPC J-STD-001E, Class 3\n   after assembly"
+	(gr_text "Manufacturing Instruction:\n- Material FR-4\n- Finished thickness: 1.57 mm ± 0.16 mm\n- Surface finish: ENIG\n- PCBs must be RoHS compliant\n- Do not edit artwork, e.g. to add logos\n   or order numbers\n- Clean to meet IPC J-STD-001E, Class 3\n   after assembly"
 		(at 181.75 43.5 0)
 		(layer "Cmts.User")
 		(uuid "80e38d28-dfe2-43c5-b361-7c0d4e00c5ff")
